@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  AudioRecordingView.swift
 //  SuperHuman
 //
 //  Created by Paulus Michael on 25/04/24.
@@ -7,13 +7,15 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct AudioRecordingView: View {
     var body: some View {
         ZStack {
             Color.lightBlue.ignoresSafeArea()
             
             VStack {
-                Text("Hello, world!")
+                Button(action: {}, label: {
+                    Image("AudioRec")
+                })
             }
             .padding()
         }
@@ -21,5 +23,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    AudioRecordingView()
 }
