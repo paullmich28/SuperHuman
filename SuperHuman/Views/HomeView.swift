@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var isShowingModal = false
+    
     var body: some View {
         let streak = 1
         
@@ -41,17 +43,24 @@ struct HomeView: View {
             }
             .toolbar(content: {
                 ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading){
-                    Button(action: {}){
+                    NavigationLink {
+                        TimerView()
+                    } label: {
                         Image(systemName: "list.bullet")
                             .bold()
+                            .foregroundStyle(.darkBlue)
                     }
-                    .foregroundStyle(Color.darkBlue)
                 }
                 
                 ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                    Button(action: {}) {
+                    Button(action: {
+                        isShowingModal.toggle()
+                    }) {
                         Image(systemName: "plus")
                             .bold()
+                    }
+                    .sheet(isPresented: $isShowingModal){
+                        TimerView()
                     }
                     .foregroundStyle(Color.darkBlue)
                 }
