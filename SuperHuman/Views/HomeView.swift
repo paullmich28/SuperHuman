@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        var streak = 1
+        let streak = 1
         
         NavigationStack{
             ZStack{
@@ -40,9 +40,18 @@ struct HomeView: View {
                 }
             }
             .toolbar(content: {
+                ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading){
+                    Button(action: {}){
+                        Image(systemName: "list.bullet")
+                            .bold()
+                    }
+                    .foregroundStyle(Color.darkBlue)
+                }
+                
                 ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
                     Button(action: {}) {
                         Image(systemName: "plus")
+                            .bold()
                     }
                     .foregroundStyle(Color.darkBlue)
                 }

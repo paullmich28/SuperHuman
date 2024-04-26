@@ -13,6 +13,7 @@
 		AC05A8092BDA103F00040B50 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC05A8082BDA103F00040B50 /* Preview Assets.xcassets */; };
 		ACD852402BDA388C00812E29 /* AudioRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */; };
 		ACD852422BDA3AFF00812E29 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD852412BDA3AFF00812E29 /* HomeView.swift */; };
+		ACD852442BDB3D2500812E29 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD852432BDB3D2500812E29 /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		AC05A8082BDA103F00040B50 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingView.swift; sourceTree = "<group>"; };
 		ACD852412BDA3AFF00812E29 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		ACD852432BDB3D2500812E29 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */,
 				ACD852412BDA3AFF00812E29 /* HomeView.swift */,
+				ACD852432BDB3D2500812E29 /* TimerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACD852442BDB3D2500812E29 /* TimerView.swift in Sources */,
 				AC05A8042BDA103E00040B50 /* ContentView.swift in Sources */,
 				ACD852422BDA3AFF00812E29 /* HomeView.swift in Sources */,
 				AC05A8022BDA103E00040B50 /* SuperHumanApp.swift in Sources */,
