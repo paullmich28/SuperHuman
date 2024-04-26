@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct SuperHumanApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(for: [
+                    Tasks.self,
+                    TrackRecords.self,
+                    Users.self
+                ])
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreML
 
 struct TimerView: View {
     @Environment(\.dismiss) var dismiss
@@ -15,7 +16,10 @@ struct TimerView: View {
             Color.lightBlue.ignoresSafeArea()
             
             VStack{
-                Text("Hello World")
+                Text("00:00:00")
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
+                    .fontDesign(.rounded)
             }
         }
     }

@@ -16,17 +16,19 @@ struct HomeView: View {
         NavigationStack{
             ZStack{
                 Color.lightBlue.ignoresSafeArea()
-                
                 VStack{
+                    Text("*Ceritanya display highest streak")
+                        .padding([.vertical], 100)
+    
                     ZStack{
                         Circle()
-                            .stroke(.black.opacity(0.1), lineWidth: 20)
+                            .stroke(.black.opacity(0.1), lineWidth: 40)
                         
                         let pct = Double(streak)/100.0
                         
                         Circle()
                             .trim(from: 0, to: pct)
-                            .stroke(.darkBlue, style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
+                            .stroke(.darkBlue, style: StrokeStyle(lineWidth: 40, lineCap: .round, lineJoin: .round))
                             .rotationEffect(.degrees(-90))
                         
                         VStack{
@@ -39,30 +41,32 @@ struct HomeView: View {
                         
                     }
                     .padding(.horizontal, 50)
+                    
+                    Spacer()
                 }
             }
             .toolbar(content: {
-                ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading){
-                    NavigationLink {
-                        TimerView()
-                    } label: {
-                        Image(systemName: "list.bullet")
-                            .bold()
-                            .foregroundStyle(.darkBlue)
-                    }
-                }
-                
-                ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
+                ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
                     Button(action: {
                         isShowingModal.toggle()
                     }) {
-                        Image(systemName: "plus")
+                        Image(systemName: "list.bullet")
                             .bold()
                     }
                     .sheet(isPresented: $isShowingModal){
-                        TimerView()
+                        ListTaskView()
                     }
                     .foregroundStyle(Color.darkBlue)
+                }
+                
+                ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing){
+                    NavigationLink {
+                        TimerView()
+                    } label: {
+                        Image(systemName: "plus")
+                            .bold()
+                            .foregroundStyle(.darkBlue)
+                    }
                 }
             })
         }
