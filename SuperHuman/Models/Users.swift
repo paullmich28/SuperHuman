@@ -9,23 +9,20 @@ import Foundation
 import SwiftData
 
 @Model
-class Users: Identifiable{
-    var id: String? = UUID().uuidString
-    var goldMedals: Int? = 0
-    var silverMedals: Int? = 0
-    var bronzeMedals: Int? = 0
-    var trophies: Int? = 0
-    var productivityScale: Int? = 0
+class Users{
+    var goldMedals: Int
+    var silverMedals: Int
+    var bronzeMedals: Int
+    var trophies: Int
+    var productivityScale: Int
     
     init(
-        id: String? = UUID().uuidString,
-        goldMedals: Int? = nil,
-        silverMedals: Int? = nil,
-        bronzeMedals: Int? = nil,
-        trophies: Int? = nil,
-        productivityScale: Int? = nil
+        goldMedals: Int = 0,
+        silverMedals: Int = 0,
+        bronzeMedals: Int = 0,
+        trophies: Int = 0,
+        productivityScale: Int = 0
     ) {
-        self.id = id
         self.goldMedals = goldMedals
         self.silverMedals = silverMedals
         self.bronzeMedals = bronzeMedals

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TimerView: View {
     @Environment(\.dismiss) var dismiss
+    @AppStorage("isWorking") var isWorking: Bool = false
     
     var body: some View {
         ZStack{
@@ -19,6 +20,10 @@ struct TimerView: View {
                     .font(.largeTitle)
                     .fontWeight(.semibold)
                     .fontDesign(.rounded)
+                
+                Button("Click Me"){
+                    isWorking.toggle()
+                }
             }
         }
         .navigationBarBackButtonHidden(true)

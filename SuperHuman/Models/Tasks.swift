@@ -9,12 +9,12 @@ import Foundation
 import SwiftData
 
 @Model
-class Tasks: Identifiable{
-    var icon: String? = ""
-    var audio: String? = ""
-    var duration: Int? = 0
+class Tasks{
+    var icon: String
+    var audio: String
+    var duration: Int
     
-    init(icon: String? = nil, audio: String? = nil, duration: Int? = nil) {
+    init(icon: String = "", audio: String = "", duration: Int = 0) {
         self.icon = icon
         self.audio = audio
         self.duration = duration

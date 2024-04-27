@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "03E6F070-6525-4D89-8EA7-D97ABCE5B4BC"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C23CB053-938E-4BEF-BD85-D5D0CAA1ABE0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../var/folders/kl/vyf5hq755fx4yl9hw3qk67300000gn/T/swift-generated-sources/@__swiftmacro_10SuperHuman5Tasks5ModelfMm_.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1"
+            endingLineNumber = "1"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "C23CB053-938E-4BEF-BD85-D5D0CAA1ABE0 - 493583f9ebba51b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SuperHuman.Tasks.init(icon: Swift.Optional&lt;Swift.String&gt;, audio: Swift.Optional&lt;Swift.String&gt;, duration: Swift.Optional&lt;Swift.Int&gt;) -&gt; SuperHuman.Tasks"
+                  moduleName = "SuperHuman"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/kl/vyf5hq755fx4yl9hw3qk67300000gn/T/swift-generated-sources/@__swiftmacro_10SuperHuman5Tasks5ModelfMm_.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2"
+                  endingLineNumber = "2"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "C23CB053-938E-4BEF-BD85-D5D0CAA1ABE0 - e21c6bc726ce42db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SuperHuman.Tasks.init(icon: Swift.String, audio: Swift.String, duration: Swift.Int) -&gt; SuperHuman.Tasks"
+                  moduleName = "SuperHuman"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/kl/vyf5hq755fx4yl9hw3qk67300000gn/T/swift-generated-sources/@__swiftmacro_10SuperHuman5Tasks5ModelfMm_.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2"
+                  endingLineNumber = "2"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "C23CB053-938E-4BEF-BD85-D5D0CAA1ABE0 - 8250e6c913814267"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SuperHuman.Tasks.init(id: Swift.Optional&lt;Swift.String&gt;, icon: Swift.Optional&lt;Swift.String&gt;, audio: Swift.Optional&lt;Swift.String&gt;, duration: Swift.Optional&lt;Swift.Int&gt;) -&gt; SuperHuman.Tasks"
+                  moduleName = "SuperHuman"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/kl/vyf5hq755fx4yl9hw3qk67300000gn/T/swift-generated-sources/@__swiftmacro_10SuperHuman5Tasks5ModelfMm_.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2"
+                  endingLineNumber = "2"
+                  offsetFromSymbolStart = "272">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -9,12 +9,12 @@ import Foundation
 import SwiftData
 
 @Model
-class TrackRecords: Identifiable{
-    var duration: Int? = 0
-    var streaks: Int? = 0
-    var tasks: [Tasks]? = [Tasks(icon: "", audio: "", duration: 0)]
+class TrackRecords{
+    var duration: Int
+    var streaks: Int
+    var tasks: [Tasks]
     
-    init(duration: Int? = nil, streaks: Int? = nil, tasks: [Tasks]) {
+    init(duration: Int = 0, streaks: Int = 0, tasks: [Tasks] = [Tasks(icon: "", audio: "", duration: 0)]) {
         self.duration = duration
         self.streaks = streaks
         self.tasks = tasks

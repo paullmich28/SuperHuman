@@ -18,6 +18,7 @@ struct ListTaskView: View {
                 
             }
         }
+        .navigationBarBackButtonHidden(true)
         .toolbar(content: {
             ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
                 Button(action: {
