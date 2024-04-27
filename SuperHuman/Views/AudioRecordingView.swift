@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AudioRecordingView: View {
+    @Query var tasks: [Tasks]
+    
     var body: some View {
         ZStack {
             Color.lightBlue.ignoresSafeArea()
