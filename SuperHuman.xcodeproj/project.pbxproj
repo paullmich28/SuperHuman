@@ -18,6 +18,8 @@
 		AC06A5F42BDB951500ACF43F /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5F32BDB951500ACF43F /* Users.swift */; };
 		AC06A5F62BDC8E9900ACF43F /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5F52BDC8E9900ACF43F /* NewTaskView.swift */; };
 		AC06A5F82BDC955000ACF43F /* ListTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5F72BDC955000ACF43F /* ListTaskView.swift */; };
+		AC22DD532BDD13BE0037DDD3 /* OngoingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC22DD522BDD13BE0037DDD3 /* OngoingTimerView.swift */; };
+		AC22DD562BDD1BC60037DDD3 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC22DD552BDD1BC60037DDD3 /* RecordView.swift */; };
 		ACD852402BDA388C00812E29 /* AudioRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */; };
 		ACD852422BDA3AFF00812E29 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD852412BDA3AFF00812E29 /* HomeView.swift */; };
 		ACD852442BDB3D2500812E29 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD852432BDB3D2500812E29 /* TimerView.swift */; };
@@ -36,6 +38,8 @@
 		AC06A5F32BDB951500ACF43F /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		AC06A5F52BDC8E9900ACF43F /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		AC06A5F72BDC955000ACF43F /* ListTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTaskView.swift; sourceTree = "<group>"; };
+		AC22DD522BDD13BE0037DDD3 /* OngoingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingTimerView.swift; sourceTree = "<group>"; };
+		AC22DD552BDD1BC60037DDD3 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingView.swift; sourceTree = "<group>"; };
 		ACD852412BDA3AFF00812E29 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ACD852432BDB3D2500812E29 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -99,9 +103,18 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		AC22DD542BDD1BB10037DDD3 /* Separated Views */ = {
+			isa = PBXGroup;
+			children = (
+				AC22DD552BDD1BC60037DDD3 /* RecordView.swift */,
+			);
+			path = "Separated Views";
+			sourceTree = "<group>";
+		};
 		ACD8523E2BDA387400812E29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AC22DD542BDD1BB10037DDD3 /* Separated Views */,
 				ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */,
 				ACD852412BDA3AFF00812E29 /* HomeView.swift */,
 				ACD852432BDB3D2500812E29 /* TimerView.swift */,
@@ -109,6 +122,7 @@
 				AC06A5F12BDB950200ACF43F /* TrophyListView.swift */,
 				AC06A5F52BDC8E9900ACF43F /* NewTaskView.swift */,
 				AC06A5F72BDC955000ACF43F /* ListTaskView.swift */,
+				AC22DD522BDD13BE0037DDD3 /* OngoingTimerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,7 +200,9 @@
 				AC06A5F62BDC8E9900ACF43F /* NewTaskView.swift in Sources */,
 				AC06A5EE2BDB829A00ACF43F /* Tasks.swift in Sources */,
 				ACD852442BDB3D2500812E29 /* TimerView.swift in Sources */,
+				AC22DD562BDD1BC60037DDD3 /* RecordView.swift in Sources */,
 				AC06A5F42BDB951500ACF43F /* Users.swift in Sources */,
+				AC22DD532BDD13BE0037DDD3 /* OngoingTimerView.swift in Sources */,
 				AC06A5EB2BDB816B00ACF43F /* TrackRecordsView.swift in Sources */,
 				AC05A8042BDA103E00040B50 /* ContentView.swift in Sources */,
 				AC06A5F02BDB911100ACF43F /* TrackRecords.swift in Sources */,

@@ -17,7 +17,8 @@ struct TrackRecordsView: View {
     @ViewBuilder
     func isListDisplayed() -> some View {
         if trackRecords.count > 0 {
-            Text("There are tasks")
+            RecordView()
+                .padding()
         }else{
             Text("No Tasks")
                 .font(.title2)

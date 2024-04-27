@@ -12,11 +12,7 @@ struct ContentView: View {
     @AppStorage("isWorking") var isWorking: Bool = false
     
     var body: some View {
-        if isWorking{
-            TimerView()
-        }else{
-            HomeView()
-        }
+        HomeView()
     }
 }
 
