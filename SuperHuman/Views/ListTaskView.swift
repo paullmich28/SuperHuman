@@ -2,39 +2,36 @@
 //  ListTaskView.swift
 //  SuperHuman
 //
-//  Created by Paulus Michael on 26/04/24.
+//  Created by Paulus Michael on 27/04/24.
 //
 
 import SwiftUI
-import SwiftData
 
 struct ListTaskView: View {
-    @State var isExisted = false
-    @Query var trackRecords: [TrackRecords]
-    
-    @ViewBuilder
-    func isListDisplayed() -> some View {
-        if trackRecords.count > 0 {
-            Text("There are tasks")
-        }else{
-            Text("No Tasks")
-                .font(.title2)
-                .fontWeight(.semibold)
-                .fontDesign(.rounded)
-        }
-    }
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack{
             Color.lightBlue.ignoresSafeArea()
             
             VStack{
-                isListDisplayed()
                 
-                Spacer()
             }
-            .padding()
         }
+        .toolbar(content: {
+            ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    HStack{
+                        Image(systemName: "chevron.left")
+                            .imageScale(.large)
+                            .bold()
+                    }
+                })
+                .foregroundStyle(.darkBlue)
+            }
+        })
     }
 }
 

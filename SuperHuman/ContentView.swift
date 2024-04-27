@@ -6,10 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+    @AppStorage("isWorking") var isWorking: Bool = false
+    
     var body: some View {
-        HomeView()
+        if isWorking{
+            TimerView()
+        }else{
+            HomeView()
+        }
     }
 }
 

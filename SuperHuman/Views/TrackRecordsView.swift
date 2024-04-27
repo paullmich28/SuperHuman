@@ -1,25 +1,41 @@
 //
-//  TimerView.swift
+//  ListTaskView.swift
 //  SuperHuman
 //
 //  Created by Paulus Michael on 26/04/24.
 //
 
 import SwiftUI
+import SwiftData
 
-struct TimerView: View {
+struct TrackRecordsView: View {
     @Environment(\.dismiss) var dismiss
+    
+    @State var isExisted = false
+    @Query var trackRecords: [TrackRecords]
+    
+    @ViewBuilder
+    func isListDisplayed() -> some View {
+        if trackRecords.count > 0 {
+            Text("There are tasks")
+        }else{
+            Text("No Tasks")
+                .font(.title2)
+                .fontWeight(.semibold)
+                .fontDesign(.rounded)
+        }
+    }
     
     var body: some View {
         ZStack{
             Color.lightBlue.ignoresSafeArea()
             
             VStack{
-                Text("00:00:00")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                    .fontDesign(.rounded)
+                isListDisplayed()
+                
+                Spacer()
             }
+            .padding()
         }
         .navigationBarBackButtonHidden(true)
         .toolbar(content: {
@@ -41,6 +57,6 @@ struct TimerView: View {
 
 #Preview {
     NavigationStack{
-        TimerView()
+        TrackRecordsView()
     }
 }
