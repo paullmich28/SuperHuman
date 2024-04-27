@@ -17,9 +17,6 @@ struct HomeView: View {
             ZStack{
                 Color.lightBlue.ignoresSafeArea()
                 VStack{
-                    Text("*Ceritanya display highest streak")
-                        .padding([.vertical], 100)
-    
                     ZStack{
                         Circle()
                             .stroke(.black.opacity(0.1), lineWidth: 40)
@@ -41,8 +38,6 @@ struct HomeView: View {
                         
                     }
                     .padding(.horizontal, 50)
-                    
-                    Spacer()
                 }
             }
             .toolbar(content: {

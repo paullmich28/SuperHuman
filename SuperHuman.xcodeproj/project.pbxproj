@@ -16,6 +16,7 @@
 		AC06A5F02BDB911100ACF43F /* TrackRecords.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5EF2BDB911100ACF43F /* TrackRecords.swift */; };
 		AC06A5F22BDB950200ACF43F /* TrophyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5F12BDB950200ACF43F /* TrophyListView.swift */; };
 		AC06A5F42BDB951500ACF43F /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5F32BDB951500ACF43F /* Users.swift */; };
+		AC06A5F62BDC8E9900ACF43F /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5F52BDC8E9900ACF43F /* NewTaskView.swift */; };
 		ACD852402BDA388C00812E29 /* AudioRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */; };
 		ACD852422BDA3AFF00812E29 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD852412BDA3AFF00812E29 /* HomeView.swift */; };
 		ACD852442BDB3D2500812E29 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD852432BDB3D2500812E29 /* TimerView.swift */; };
@@ -32,6 +33,7 @@
 		AC06A5EF2BDB911100ACF43F /* TrackRecords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRecords.swift; sourceTree = "<group>"; };
 		AC06A5F12BDB950200ACF43F /* TrophyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyListView.swift; sourceTree = "<group>"; };
 		AC06A5F32BDB951500ACF43F /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		AC06A5F52BDC8E9900ACF43F /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingView.swift; sourceTree = "<group>"; };
 		ACD852412BDA3AFF00812E29 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ACD852432BDB3D2500812E29 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				ACD852432BDB3D2500812E29 /* TimerView.swift */,
 				AC06A5EA2BDB816B00ACF43F /* ListTaskView.swift */,
 				AC06A5F12BDB950200ACF43F /* TrophyListView.swift */,
+				AC06A5F52BDC8E9900ACF43F /* NewTaskView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC06A5F62BDC8E9900ACF43F /* NewTaskView.swift in Sources */,
 				AC06A5EE2BDB829A00ACF43F /* Tasks.swift in Sources */,
 				ACD852442BDB3D2500812E29 /* TimerView.swift in Sources */,
 				AC06A5F42BDB951500ACF43F /* Users.swift in Sources */,

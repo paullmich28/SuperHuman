@@ -6,10 +6,19 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TrophyListView: View {
+    @Query var users: [Users]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Color.lightBlue.ignoresSafeArea()
+            
+            VStack{
+                Text("List Trophy")
+            }
+        }
     }
 }
 

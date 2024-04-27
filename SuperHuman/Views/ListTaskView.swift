@@ -10,11 +10,11 @@ import SwiftData
 
 struct ListTaskView: View {
     @State var isExisted = false
-    @Query var tasks: [Tasks]
+    @Query var trackRecords: [TrackRecords]
     
     @ViewBuilder
     func isListDisplayed() -> some View {
-        if tasks.count > 0 {
+        if trackRecords.count > 0 {
             Text("There are tasks")
         }else{
             Text("No Tasks")

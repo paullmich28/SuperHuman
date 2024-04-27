@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CoreML
 
 struct TimerView: View {
     @Environment(\.dismiss) var dismiss
