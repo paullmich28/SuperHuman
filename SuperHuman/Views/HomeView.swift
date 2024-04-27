@@ -42,16 +42,34 @@ struct HomeView: View {
             }
             .toolbar(content: {
                 ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
-                    Button(action: {
-                        isShowingModal.toggle()
-                    }) {
+                    NavigationLink {
+                        TrackRecordsView()
+                    } label: {
                         Image(systemName: "list.bullet")
                             .bold()
+                            .foregroundStyle(.darkBlue)
                     }
-                    .sheet(isPresented: $isShowingModal){
+                    
+//                    Button(action: {
+//                        isShowingModal.toggle()
+//                    }) {
+//                        Image(systemName: "list.bullet")
+//                            .bold()
+//                    }
+//                    .sheet(isPresented: $isShowingModal){
+//                        TrackRecordsView()
+//                    }
+//                    .foregroundStyle(Color.darkBlue)
+                }
+                
+                ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading){
+                    NavigationLink{
                         ListTaskView()
+                    } label: {
+                        Image(systemName: "trophy.circle")
+                            .bold()
+                            .foregroundStyle(.darkBlue)
                     }
-                    .foregroundStyle(Color.darkBlue)
                 }
                 
                 ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing){
