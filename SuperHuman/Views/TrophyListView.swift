@@ -19,7 +19,75 @@ struct TrophyListView: View {
             Color.lightBlue.ignoresSafeArea()
             
             VStack{
-                Text("\(goldMedals)")
+                Image("piala")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 135)
+                    .padding([.bottom], -15)
+                
+                Image("meja")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 300)
+                
+                HStack{
+                    ZStack {
+                        Image("goldMedal")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50)
+                        Image("frame")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100)
+                    }
+                    
+                    Text("X\(goldMedals)")
+                        .font(.largeTitle)
+                        .foregroundStyle(.darkBlue)
+                        .fontWeight(.bold)
+                        .fontDesign(.rounded)
+                }
+                
+                HStack{
+                    ZStack{
+                        Image("silverMedal")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50)
+                        
+                        Image("frame")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100)
+                    }
+                    
+                    Text("X\(silverMedals)")
+                        .font(.largeTitle)
+                        .foregroundStyle(.darkBlue)
+                        .fontWeight(.bold)
+                        .fontDesign(.rounded)
+                }
+                
+                HStack{
+                    ZStack {
+                        Image("bronzeMedal")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50)
+                        
+                        Image("frame")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100)
+                    }
+                    
+                    Text("X\(bronzeMedals)")
+                        .font(.largeTitle)
+                        .foregroundStyle(.darkBlue)
+                        .fontWeight(.bold)
+                        .fontDesign(.rounded)
+                }
             }
         }
     }
