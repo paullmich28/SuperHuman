@@ -19,7 +19,7 @@ struct TrophyListView: View {
             Color.lightBlue.ignoresSafeArea()
             
             VStack{
-                Image("piala")
+                Image("piala-kosong")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 135)
