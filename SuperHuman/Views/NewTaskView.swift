@@ -6,30 +6,47 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct NewTaskView: View {
     @Environment(\.dismiss) var dismiss
+    @State var taskIndex: Int = 0
+    
+    @Query var tasks: [Tasks]
     
     var body: some View {
         ZStack{
             Color.lightBlue.ignoresSafeArea()
             
             VStack{
-                ForEach(1..<4) { _ in
-                    NavigationLink {
+                ForEach(1..<4) { index in
+                    if tasks.indices.contains(index){
+                        Text("Hello")
+                    }else{
+                        NavigationLink {
+                            AudioRecordingView()
+                        } label: {
+                            ZStack{
+                                RoundedRectangle(cornerSize: CGSize(width: 20, height: 20))
+                                    .frame(width: 192, height: 120)
+                                    .foregroundStyle(.white)
+                                    .opacity(0.6)
+                                
+                                Image(systemName: "plus")
+                                    .foregroundStyle(.black.opacity(0.5))
+                                    .font(.largeTitle)
+                            }
+                            .padding([.vertical], 20)
+                        }
+                    }
+                }
+                
+                if tasks.count == 3{
+                    NavigationLink{
                         TimerView()
                     } label: {
-                        ZStack{
-                            RoundedRectangle(cornerSize: CGSize(width: 20, height: 20))
-                                .frame(width: 192, height: 120)
-                                .foregroundStyle(.white)
-                                .opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-                            
-                            Image(systemName: "plus")
-                                .foregroundStyle(.black.opacity(0.5))
-                                .font(.largeTitle)
-                        }
-                        .padding([.vertical], 20)
+                        RoundedRectangle(cornerSize: CGSize(width: 20, height: 20))
+                            .frame(width: 192, height: 75)
                     }
                 }
             }
