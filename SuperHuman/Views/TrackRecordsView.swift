@@ -11,7 +11,6 @@ import SwiftData
 struct TrackRecordsView: View {
     @Environment(\.dismiss) var dismiss
     
-    @State var isExisted = false
     @Query var trackRecords: [TrackRecords]
     
     @ViewBuilder
@@ -20,10 +19,8 @@ struct TrackRecordsView: View {
             RecordView()
                 .padding()
         }else{
-            Text("No Tasks")
-                .font(.title2)
-                .fontWeight(.semibold)
-                .fontDesign(.rounded)
+            AnimationView(name: "empty", loopMode: .loop, animationSpeed: 0.5)
+                .scaleEffect(0.9)
         }
     }
     

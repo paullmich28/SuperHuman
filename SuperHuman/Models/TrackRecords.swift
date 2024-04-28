@@ -12,11 +12,11 @@ import SwiftData
 class TrackRecords{
     var duration: Int
     var streaks: Int
-    var tasks: [Tasks]
+    var date: Date
     
-    init(duration: Int = 0, streaks: Int = 0, tasks: [Tasks] = [Tasks(icon: "", audio: "", duration: 0)]) {
+    init(duration: Int = 0, streaks: Int = 0, date: Date = .now) {
         self.duration = duration
         self.streaks = streaks
-        self.tasks = tasks
+        self.date = date
     }
 }
