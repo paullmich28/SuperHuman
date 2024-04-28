@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		076133F9F02E79C94E44DF2B /* libPods-SuperHuman.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C87FA9D352999C1884DF03F /* libPods-SuperHuman.a */; };
 		AC05A8022BDA103E00040B50 /* SuperHumanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC05A8012BDA103E00040B50 /* SuperHumanApp.swift */; };
 		AC05A8042BDA103E00040B50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC05A8032BDA103E00040B50 /* ContentView.swift */; };
 		AC05A8062BDA103F00040B50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC05A8052BDA103F00040B50 /* Assets.xcassets */; };
@@ -18,6 +19,9 @@
 		AC06A5F42BDB951500ACF43F /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5F32BDB951500ACF43F /* Users.swift */; };
 		AC06A5F62BDC8E9900ACF43F /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5F52BDC8E9900ACF43F /* NewTaskView.swift */; };
 		AC06A5F82BDC955000ACF43F /* ListTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5F72BDC955000ACF43F /* ListTaskView.swift */; };
+		AC1D4E3F2BDD6C41004DB7E6 /* AccomplishmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D4E3E2BDD6C41004DB7E6 /* AccomplishmentView.swift */; };
+		AC1D4E412BDD6D72004DB7E6 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D4E402BDD6D72004DB7E6 /* AnimationView.swift */; };
+		AC1D4E442BDD6EA1004DB7E6 /* crying.json in Resources */ = {isa = PBXBuildFile; fileRef = AC1D4E432BDD6EA1004DB7E6 /* crying.json */; };
 		AC22DD532BDD13BE0037DDD3 /* OngoingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC22DD522BDD13BE0037DDD3 /* OngoingTimerView.swift */; };
 		AC22DD562BDD1BC60037DDD3 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC22DD552BDD1BC60037DDD3 /* RecordView.swift */; };
 		ACD852402BDA388C00812E29 /* AudioRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */; };
@@ -26,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C87FA9D352999C1884DF03F /* libPods-SuperHuman.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperHuman.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76CE075660CF0FD3F9408A63 /* Pods-SuperHuman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHuman.release.xcconfig"; path = "Target Support Files/Pods-SuperHuman/Pods-SuperHuman.release.xcconfig"; sourceTree = "<group>"; };
 		AC05A7FE2BDA103E00040B50 /* SuperHuman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperHuman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC05A8012BDA103E00040B50 /* SuperHumanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHumanApp.swift; sourceTree = "<group>"; };
 		AC05A8032BDA103E00040B50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,11 +44,15 @@
 		AC06A5F32BDB951500ACF43F /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		AC06A5F52BDC8E9900ACF43F /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		AC06A5F72BDC955000ACF43F /* ListTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTaskView.swift; sourceTree = "<group>"; };
+		AC1D4E3E2BDD6C41004DB7E6 /* AccomplishmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccomplishmentView.swift; sourceTree = "<group>"; };
+		AC1D4E402BDD6D72004DB7E6 /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
+		AC1D4E432BDD6EA1004DB7E6 /* crying.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = crying.json; sourceTree = "<group>"; };
 		AC22DD522BDD13BE0037DDD3 /* OngoingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingTimerView.swift; sourceTree = "<group>"; };
 		AC22DD552BDD1BC60037DDD3 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingView.swift; sourceTree = "<group>"; };
 		ACD852412BDA3AFF00812E29 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ACD852432BDB3D2500812E29 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		F50D771EEE2D6D14E0A22BAC /* Pods-SuperHuman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHuman.debug.xcconfig"; path = "Target Support Files/Pods-SuperHuman/Pods-SuperHuman.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,17 +60,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076133F9F02E79C94E44DF2B /* libPods-SuperHuman.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B6A2B4CD9569418B237953B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C87FA9D352999C1884DF03F /* libPods-SuperHuman.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AC05A7F52BDA103E00040B50 = {
 			isa = PBXGroup;
 			children = (
 				AC05A8002BDA103E00040B50 /* SuperHuman */,
 				AC05A7FF2BDA103E00040B50 /* Products */,
+				FEE6CF3C21FB066DC0D1F288 /* Pods */,
+				7B6A2B4CD9569418B237953B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +96,7 @@
 		AC05A8002BDA103E00040B50 /* SuperHuman */ = {
 			isa = PBXGroup;
 			children = (
+				AC1D4E422BDD6E05004DB7E6 /* Animation */,
 				AC06A5EC2BDB824B00ACF43F /* Models */,
 				ACD8523E2BDA387400812E29 /* Views */,
 				AC05A8012BDA103E00040B50 /* SuperHumanApp.swift */,
@@ -103,10 +125,19 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		AC1D4E422BDD6E05004DB7E6 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				AC1D4E432BDD6EA1004DB7E6 /* crying.json */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
 		AC22DD542BDD1BB10037DDD3 /* Separated Views */ = {
 			isa = PBXGroup;
 			children = (
 				AC22DD552BDD1BC60037DDD3 /* RecordView.swift */,
+				AC1D4E402BDD6D72004DB7E6 /* AnimationView.swift */,
 			);
 			path = "Separated Views";
 			sourceTree = "<group>";
@@ -123,8 +154,18 @@
 				AC06A5F52BDC8E9900ACF43F /* NewTaskView.swift */,
 				AC06A5F72BDC955000ACF43F /* ListTaskView.swift */,
 				AC22DD522BDD13BE0037DDD3 /* OngoingTimerView.swift */,
+				AC1D4E3E2BDD6C41004DB7E6 /* AccomplishmentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FEE6CF3C21FB066DC0D1F288 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F50D771EEE2D6D14E0A22BAC /* Pods-SuperHuman.debug.xcconfig */,
+				76CE075660CF0FD3F9408A63 /* Pods-SuperHuman.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC05A80C2BDA103F00040B50 /* Build configuration list for PBXNativeTarget "SuperHuman" */;
 			buildPhases = (
+				4346CE981605283FC17FB444 /* [CP] Check Pods Manifest.lock */,
 				AC05A7FA2BDA103E00040B50 /* Sources */,
 				AC05A7FB2BDA103E00040B50 /* Frameworks */,
 				AC05A7FC2BDA103E00040B50 /* Resources */,
+				FC82B548E41A065EA9362670 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -185,12 +228,55 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC1D4E442BDD6EA1004DB7E6 /* crying.json in Resources */,
 				AC05A8092BDA103F00040B50 /* Preview Assets.xcassets in Resources */,
 				AC05A8062BDA103F00040B50 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4346CE981605283FC17FB444 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SuperHuman-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC82B548E41A065EA9362670 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SuperHuman/Pods-SuperHuman-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SuperHuman/Pods-SuperHuman-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SuperHuman/Pods-SuperHuman-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AC05A7FA2BDA103E00040B50 /* Sources */ = {
@@ -206,8 +292,10 @@
 				AC06A5EB2BDB816B00ACF43F /* TrackRecordsView.swift in Sources */,
 				AC05A8042BDA103E00040B50 /* ContentView.swift in Sources */,
 				AC06A5F02BDB911100ACF43F /* TrackRecords.swift in Sources */,
+				AC1D4E412BDD6D72004DB7E6 /* AnimationView.swift in Sources */,
 				AC06A5F82BDC955000ACF43F /* ListTaskView.swift in Sources */,
 				ACD852422BDA3AFF00812E29 /* HomeView.swift in Sources */,
+				AC1D4E3F2BDD6C41004DB7E6 /* AccomplishmentView.swift in Sources */,
 				AC05A8022BDA103E00040B50 /* SuperHumanApp.swift in Sources */,
 				AC06A5F22BDB950200ACF43F /* TrophyListView.swift in Sources */,
 				ACD852402BDA388C00812E29 /* AudioRecordingView.swift in Sources */,
@@ -254,7 +342,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -317,7 +405,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -338,6 +426,7 @@
 		};
 		AC05A80D2BDA103F00040B50 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F50D771EEE2D6D14E0A22BAC /* Pods-SuperHuman.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -367,6 +456,7 @@
 		};
 		AC05A80E2BDA103F00040B50 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76CE075660CF0FD3F9408A63 /* Pods-SuperHuman.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
