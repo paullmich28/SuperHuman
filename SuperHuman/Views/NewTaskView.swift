@@ -12,32 +12,46 @@ struct NewTaskView: View {
     @Environment(\.dismiss) var dismiss
     @State var taskIndex: Int = 0
     
-    @Query var tasks: [Tasks]
+    @Query(sort: \Tasks.timestamp) var tasks: [Tasks]
     
     var body: some View {
         ZStack{
             Color.lightBlue.ignoresSafeArea()
             
             VStack{
-                ForEach(1..<4) { index in
-                    if tasks.indices.contains(index){
-                        Text("Hello")
-                    }else{
-                        NavigationLink {
-                            AudioRecordingView()
-                        } label: {
-                            ZStack{
-                                RoundedRectangle(cornerSize: CGSize(width: 20, height: 20))
-                                    .frame(width: 192, height: 120)
-                                    .foregroundStyle(.white)
-                                    .opacity(0.6)
-                                
-                                Image(systemName: "plus")
-                                    .foregroundStyle(.black.opacity(0.5))
-                                    .font(.largeTitle)
-                            }
-                            .padding([.vertical], 20)
+                ForEach(tasks){task in
+                    NavigationLink {
+                        TaskDetailView()
+                    } label: {
+                        ZStack{
+                            RoundedRectangle(cornerSize: CGSize(width: 20, height: 20))
+                                .frame(width: 192, height: 120)
+                                .foregroundStyle(.white)
+                                .opacity(0.6)
+
+                            Image(systemName: "plus")
+                                .foregroundStyle(.black.opacity(0.5))
+                                .font(.largeTitle)
                         }
+                        .padding([.vertical], 20)
+                    }
+                }
+                
+                if(tasks.count < 3){
+                    NavigationLink {
+                        AudioRecordingView()
+                    } label: {
+                        ZStack{
+                            RoundedRectangle(cornerSize: CGSize(width: 20, height: 20))
+                                .frame(width: 192, height: 120)
+                                .foregroundStyle(.white)
+                                .opacity(0.6)
+
+                            Image(systemName: "plus")
+                                .foregroundStyle(.black.opacity(0.5))
+                                .font(.largeTitle)
+                        }
+                        .padding([.vertical], 20)
                     }
                 }
                 

@@ -9,14 +9,17 @@ import SwiftUI
 import SwiftData
 
 struct TrophyListView: View {
-    @Query var users: [Users]
+    @AppStorage("goldMedals") var goldMedals = 0
+    @AppStorage("silverMedals") var silverMedals = 0
+    @AppStorage("bronzeMedals") var bronzeMedals = 0
+    @AppStorage("trophies") var trophies = 0
     
     var body: some View {
         ZStack{
             Color.lightBlue.ignoresSafeArea()
             
             VStack{
-                Text("List Trophy")
+                Text("\(goldMedals)")
             }
         }
     }

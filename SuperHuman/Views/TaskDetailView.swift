@@ -1,29 +1,21 @@
 //
-//  TimerView.swift
+//  TaskDetailView.swift
 //  SuperHuman
 //
-//  Created by Paulus Michael on 26/04/24.
+//  Created by Paulus Michael on 28/04/24.
 //
 
 import SwiftUI
 
-struct TimerView: View {
+struct TaskDetailView: View {
     @Environment(\.dismiss) var dismiss
-    @AppStorage("isWorking") var isWorking: Bool = false
     
     var body: some View {
         ZStack{
             Color.lightBlue.ignoresSafeArea()
             
             VStack{
-                Text("00:00:00")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                    .fontDesign(.rounded)
                 
-//                Button("Click Me"){
-//                    isWorking.toggle()
-//                }
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -45,7 +37,5 @@ struct TimerView: View {
 }
 
 #Preview {
-    NavigationStack{
-        TimerView()
-    }
+    TaskDetailView()
 }
