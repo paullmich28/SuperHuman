@@ -24,6 +24,7 @@
 		AC1D4E442BDD6EA1004DB7E6 /* crying.json in Resources */ = {isa = PBXBuildFile; fileRef = AC1D4E432BDD6EA1004DB7E6 /* crying.json */; };
 		AC22DD532BDD13BE0037DDD3 /* OngoingTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC22DD522BDD13BE0037DDD3 /* OngoingTimerView.swift */; };
 		AC22DD562BDD1BC60037DDD3 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC22DD552BDD1BC60037DDD3 /* RecordView.swift */; };
+		AC5E9E1D2BDE02D10060841D /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5E9E1C2BDE02D10060841D /* TaskDetailView.swift */; };
 		ACD852402BDA388C00812E29 /* AudioRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */; };
 		ACD852422BDA3AFF00812E29 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD852412BDA3AFF00812E29 /* HomeView.swift */; };
 		ACD852442BDB3D2500812E29 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD852432BDB3D2500812E29 /* TimerView.swift */; };
@@ -49,6 +50,7 @@
 		AC1D4E432BDD6EA1004DB7E6 /* crying.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = crying.json; sourceTree = "<group>"; };
 		AC22DD522BDD13BE0037DDD3 /* OngoingTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngoingTimerView.swift; sourceTree = "<group>"; };
 		AC22DD552BDD1BC60037DDD3 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		AC5E9E1C2BDE02D10060841D /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingView.swift; sourceTree = "<group>"; };
 		ACD852412BDA3AFF00812E29 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ACD852432BDB3D2500812E29 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				AC06A5F72BDC955000ACF43F /* ListTaskView.swift */,
 				AC22DD522BDD13BE0037DDD3 /* OngoingTimerView.swift */,
 				AC1D4E3E2BDD6C41004DB7E6 /* AccomplishmentView.swift */,
+				AC5E9E1C2BDE02D10060841D /* TaskDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				AC1D4E3F2BDD6C41004DB7E6 /* AccomplishmentView.swift in Sources */,
 				AC05A8022BDA103E00040B50 /* SuperHumanApp.swift in Sources */,
 				AC06A5F22BDB950200ACF43F /* TrophyListView.swift in Sources */,
+				AC5E9E1D2BDE02D10060841D /* TaskDetailView.swift in Sources */,
 				ACD852402BDA388C00812E29 /* AudioRecordingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

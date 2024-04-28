@@ -13,12 +13,14 @@ class Tasks{
     var icon: String
     var audio: String
     var duration: Int
-    var isExist: Bool
+    var timestamp: Date
+    var isCompleted: Bool
     
-    init(icon: String = "", audio: String = "", duration: Int = 0, isExist: Bool = false) {
+    init(icon: String = "", audio: String = "", duration: Int = 0, timestamp: Date = Date.now, isCompleted: Bool = false) {
         self.icon = icon
         self.audio = audio
         self.duration = duration
-        self.isExist = isExist
+        self.timestamp = timestamp
+        self.isCompleted = isCompleted
     }
 }
