@@ -13,6 +13,8 @@ struct AudioRecordingView: View {
     @Environment(\.dismiss) var dismiss
     @State var session: AVAudioSession!
     @State var recorder: AVAudioRecorder!
+    @State var audioPlayer : AVAudioPlayer!
+    
     @State var alert = false
     
     @State var record = false
@@ -49,6 +51,9 @@ struct AudioRecordingView: View {
                                 .font(.system(size: 24))
                         }
                         .offset(y: -70)
+                        .onTapGesture {
+                            startPlaying(url: audios[0])
+                        }
                     }
                     
                     ZStack{
@@ -68,19 +73,13 @@ struct AudioRecordingView: View {
                     .offset(y: -70)
                     .onTapGesture {
                         onIncreaseCircle()
-//                        self.record.toggle()
-//                        print(record)
+                        
                         do{
-                            if self.record{
-                                self.recorder.stop()
-                                self.record.toggle()
-                                self.getAudios()
-                                return
-                            }
+                            
                             
                             let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
                             
-                            let fileName = url.appendingPathComponent("myRcd.m4a")
+                            let fileName = url.appendingPathComponent("myRcd\(self.audios.count + 1).m4a")
                             
                             let settings = [
                                 AVFormatIDKey : Int(kAudioFormatMPEG4AAC),
@@ -91,7 +90,7 @@ struct AudioRecordingView: View {
                             
                             self.recorder = try AVAudioRecorder(url: fileName, settings: settings)
                             self.recorder.record()
-                            self.record.toggle()
+                            self.record = true
                         }catch{
                             print(error.localizedDescription)
                         }
@@ -167,7 +166,14 @@ struct AudioRecordingView: View {
                         .offset(y: -50)
                         .onTapGesture {
                             onDecreaseCircle()
+                            if self.record{
+                                self.recorder.stop()
+                                self.record.toggle()
+                                self.getAudios()
+                            }
+                            
                             isRecorded = true
+                            self.record = false
                         }
                     }
                     .frame(height: UIScreen.main.bounds.height)
@@ -250,6 +256,36 @@ struct AudioRecordingView: View {
         }catch{
             print(error.localizedDescription)
         }
+    }
+    
+    
+    func startPlaying(url : URL) {
+      
+        let playSession = AVAudioSession.sharedInstance()
+            
+        do {
+            try playSession.overrideOutputAudioPort(AVAudioSession.PortOverride.speaker)
+        } catch {
+            print("Playing failed in Device")
+        }
+            
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf : url)
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+//            for i in 0..<recordingsList.count{
+//                if recordingsList[i].fileURL == url{
+//                    recordingsList[i].isPlaying = true
+//                }
+//            }
+                
+        } catch {
+            print("Playing Failed")
+        }
+    }
+    
+    func stopPlaying(){
+        audioPlayer.stop()
     }
 }
 
