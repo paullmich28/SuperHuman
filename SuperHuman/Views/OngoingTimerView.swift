@@ -13,7 +13,12 @@ struct OngoingTimerView: View {
 
     @State var hour:Int=0
     @State var minute:Int=0
-    @State var second:Int=10
+    @State var second:Int=2
+    
+    @State var isDone:Bool=false
+    @State var isNotDone:Bool=false
+    @State var scaleEffect:Double = 0.8
+    @State var goHome:Bool = false
     
     var emoji:String="😍"
     
@@ -26,20 +31,26 @@ struct OngoingTimerView: View {
                 }.frame(width:120, height:75).background(.darkBlue).cornerRadius(10)
                 
                 Spacer()
-                
-                //AnimationView(name:"hourglass",loopMode:.loop, animationSpeed:10)
+  
                 CountDown(hour:$hour, minute:$minute, second:$second)
                 
+                Spacer()
+                
+                AnimationView(name:"hourglass",loopMode:.loop, animationSpeed:1).scaleEffect(0.8)
+                    .frame(width:300,height:350)
+                
                 if(hour==0 && minute==0 && second==0){
-                    DoneOrNot()
+                    Spacer()
+                    DoneOrNot(isDone:$isDone, isNotDone:$isNotDone).onAppear{
+                        scaleEffect=0.5
+                    }
                 }
                 
                 Spacer()
             }
-            
-        }.navigationBarBackButtonHidden(true)
-        .toolbar(content:{
-            ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
+
+        }//.navigationBarBackButtonHidden(true)
+        .toolbar(content: { ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
                 Button(action: {
                     dismiss()
                 }, label: {
@@ -49,17 +60,52 @@ struct OngoingTimerView: View {
                 .foregroundStyle(.darkBlue)
             }
         })
+        .overlay(alignment:.center){
+            if(isDone){
+                AccomplishmentView(isDone:true).onAppear{
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        withAnimation {
+                            isDone = false
+                            goHome = true
+                        }
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                        dismiss()
+                    }
+                }
+                
+            }
+            if(isNotDone){
+                AccomplishmentView(isDone:false).onAppear{
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        withAnimation {
+                            isDone = false
+                            goHome = true
+                        }
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                        dismiss()
+                    }
+                }
+            }
+      
+        }
         
-
     }
 }
 
 struct DoneOrNot : View{
+    
+    @Binding var isDone:Bool
+    @Binding var isNotDone:Bool
+    
     var body : some View{
         HStack{
             Spacer()
             Button(action: {
                 //dismiss()
+
+                isNotDone=true
             }, label: {
                 VStack{
                     Image(systemName:"xmark").foregroundColor(Color.darkBlue).font(.custom("SF Pro",size:50))
@@ -70,6 +116,7 @@ struct DoneOrNot : View{
             
             Button(action: {
                 //dismiss()
+                isDone=true
             }, label: {
                 VStack{
                     Image(systemName:"checkmark").foregroundColor(Color.whiteBlue).font(.custom("SF Pro",size:50))
@@ -133,9 +180,6 @@ struct CountDown:View{
                         minute = 59
                         second = 59
                     }
-                    else{
-                        //NOO
-                    }
                 }
                 else{
                     minute = minute - 1
@@ -154,5 +198,6 @@ struct CountDown:View{
 #Preview {
     NavigationStack{
         OngoingTimerView()
+
     }
 }
