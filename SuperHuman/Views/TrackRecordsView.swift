@@ -16,8 +16,12 @@ struct TrackRecordsView: View {
     @ViewBuilder
     func isListDisplayed() -> some View {
         if trackRecords.count > 0 {
-            RecordView()
-                .padding()
+            ScrollView{
+                ForEach(trackRecords, id: \.self){ record in
+                    RecordView(date: record.date, hours: record.duration, prodScale: record.productivityScale)
+                        .padding()
+                }
+            }
         }else{
             AnimationView(name: "empty", loopMode: .loop, animationSpeed: 0.5)
                 .scaleEffect(0.9)
@@ -30,8 +34,6 @@ struct TrackRecordsView: View {
             
             VStack{
                 isListDisplayed()
-                
-                Spacer()
             }
             .padding()
         }

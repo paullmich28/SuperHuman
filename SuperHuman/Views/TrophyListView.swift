@@ -21,11 +21,19 @@ struct TrophyListView: View {
             Color.lightBlue.ignoresSafeArea()
             
             VStack{
-                Image("piala-kosong")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 135)
-                    .padding([.bottom], -15)
+                if trophies >= 1{
+                    Image("piala")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 135)
+                        .padding([.bottom], -15)
+                }else{
+                    Image("piala-kosong")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 135)
+                        .padding([.bottom], -15)
+                }
                 
                 Image("meja")
                     .resizable()

@@ -13,12 +13,15 @@ struct AudioRecordingView: View {
     @Environment(\.dismiss) var dismiss
     @State var session: AVAudioSession!
     @State var recorder: AVAudioRecorder!
+    @State var alert = false
     
     @State var record = false
     @State var offsetRecord = 0.0
     @State var circleSize: CGFloat = 0.0
     @State var isRecorded = false
     @State var audio = ""
+    
+    @State var audios: [URL] = []
     
     @Query var tasks: [Tasks]
     
@@ -52,7 +55,7 @@ struct AudioRecordingView: View {
                         Circle()
                             .fill(Color.darkBlue)
                             .frame(width: 70, height: 70)
-                        
+                    
                         Circle()
                             .stroke(.lightBlue, lineWidth: 5)
                             .fill(.darkBlue)
@@ -65,6 +68,33 @@ struct AudioRecordingView: View {
                     .offset(y: -70)
                     .onTapGesture {
                         onIncreaseCircle()
+//                        self.record.toggle()
+//                        print(record)
+                        do{
+                            if self.record{
+                                self.recorder.stop()
+                                self.record.toggle()
+                                self.getAudios()
+                                return
+                            }
+                            
+                            let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                            
+                            let fileName = url.appendingPathComponent("myRcd.m4a")
+                            
+                            let settings = [
+                                AVFormatIDKey : Int(kAudioFormatMPEG4AAC),
+                                AVSampleRateKey : 12000,
+                                AVNumberOfChannelsKey : 1,
+                                AVEncoderAudioQualityKey : AVAudioQuality.high.rawValue
+                            ]
+                            
+                            self.recorder = try AVAudioRecorder(url: fileName, settings: settings)
+                            self.recorder.record()
+                            self.record.toggle()
+                        }catch{
+                            print(error.localizedDescription)
+                        }
                     }
                     
                     if isRecorded{
@@ -81,13 +111,25 @@ struct AudioRecordingView: View {
                                     .fill(.darkBlue)
                                     .frame(width: 50, height: 50)
                                 
-                                Image(systemName: "restart")
+                                Image(systemName: "arrow.uturn.backward")
                                     .foregroundColor(.white)
                                     .font(.system(size: 24))
                             }
                             .offset(y: -70)
                         }
                     }
+                }
+                
+                if isRecorded{
+                    NavigationLink {
+                        TimerView()
+                    } label: {
+                        VStack{
+                            Image(systemName:"arrowshape.right.fill").foregroundColor(.darkBlue).font(.custom("SF Pro",size:50))
+                            
+                        }.frame(width:120, height:75).background(.whiteBlue).cornerRadius(10)
+                    }
+                    .offset(y: -50)
                 }
             }
             .frame(height: UIScreen.main.bounds.height)
@@ -147,16 +189,21 @@ struct AudioRecordingView: View {
                 .foregroundStyle(.darkBlue)
             }
         })
+        .alert(isPresented: self.$alert, content: {
+            Alert(title: Text("Error"), message: Text("Enable Access"))
+        })
         .onAppear{
             do{
                 self.session = AVAudioSession.sharedInstance()
                 try self.session.setCategory(.playAndRecord)
                 
-//                self.session.requestRecordPermission{ (status) in
-//                    if !status{
-//                        self.alert.toggle()
-//                    }
-//                }
+                self.session.requestRecordPermission{ (status) in
+                    if !status{
+                        self.alert.toggle()
+                    }else{
+                        self.getAudios()
+                    }
+                }
             }catch{
                 print(error.localizedDescription)
             }
@@ -186,6 +233,22 @@ struct AudioRecordingView: View {
                     timer.invalidate()
                 }
             }
+        }
+    }
+    
+    func getAudios(){
+        do{
+            let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            
+            let result = try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: .producesRelativePathURLs)
+            
+            self.audios.removeAll()
+            
+            for i in result{
+                self.audios.append(i)
+            }
+        }catch{
+            print(error.localizedDescription)
         }
     }
 }

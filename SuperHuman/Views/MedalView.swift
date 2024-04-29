@@ -12,9 +12,11 @@ struct MedalView: View {
         ZStack{
             Color.lightBlue.ignoresSafeArea()
             
+            AnimationView(name: "hooray", loopMode: .playOnce, animationSpeed: 1.0)
+                .scaleEffect(2)
+            
             VStack{
-                AnimationView(name: "hooray", loopMode: .playOnce, animationSpeed: 1.0)
-                    .scaleEffect(2)
+                
             }
         }
     }

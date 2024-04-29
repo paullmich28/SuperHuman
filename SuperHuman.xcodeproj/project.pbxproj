@@ -32,7 +32,6 @@
 		ACD852402BDA388C00812E29 /* AudioRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */; };
 		ACD852422BDA3AFF00812E29 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD852412BDA3AFF00812E29 /* HomeView.swift */; };
 		ACD852442BDB3D2500812E29 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD852432BDB3D2500812E29 /* TimerView.swift */; };
-		C0FE524F2BDE884F00D567E8 /* newHourGlass.json in Resources */ = {isa = PBXBuildFile; fileRef = C0FE524E2BDE884F00D567E8 /* newHourGlass.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +62,6 @@
 		ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingView.swift; sourceTree = "<group>"; };
 		ACD852412BDA3AFF00812E29 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ACD852432BDB3D2500812E29 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
-		C0FE524E2BDE884F00D567E8 /* newHourGlass.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newHourGlass.json; sourceTree = "<group>"; };
 		F50D771EEE2D6D14E0A22BAC /* Pods-SuperHuman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHuman.debug.xcconfig"; path = "Target Support Files/Pods-SuperHuman/Pods-SuperHuman.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,7 +140,6 @@
 				AC5E9E442BDF61250060841D /* hooray.json */,
 				AC5E9E322BDF3F130060841D /* empty.json */,
 				AC5E9E202BDE38740060841D /* happy.json */,
-				C0FE524E2BDE884F00D567E8 /* newHourGlass.json */,
 				AC5E9E212BDE38740060841D /* hourglass.json */,
 				AC1D4E432BDD6EA1004DB7E6 /* crying.json */,
 			);
@@ -253,7 +250,6 @@
 				AC05A8092BDA103F00040B50 /* Preview Assets.xcassets in Resources */,
 				AC5E9E452BDF61250060841D /* hooray.json in Resources */,
 				AC05A8062BDA103F00040B50 /* Assets.xcassets in Resources */,
-				C0FE524F2BDE884F00D567E8 /* newHourGlass.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +456,7 @@
 				DEVELOPMENT_TEAM = ARLGKL6RC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses microphone to record audio";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -490,6 +487,7 @@
 				DEVELOPMENT_TEAM = ARLGKL6RC3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This app uses microphone to record audio";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
