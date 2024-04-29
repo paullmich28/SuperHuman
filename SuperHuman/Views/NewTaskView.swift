@@ -11,6 +11,7 @@ import SwiftData
 struct NewTaskView: View {
     @Environment(\.dismiss) var dismiss
     @State var taskIndex: Int = 0
+    @State private var path: [String] = []
     
     @Query(sort: \Tasks.timestamp) var tasks: [Tasks]
     
@@ -28,7 +29,7 @@ struct NewTaskView: View {
                                 .frame(width: 192, height: 120)
                                 .foregroundStyle(.white)
                                 .opacity(0.6)
-
+                            
                             Image(systemName: "plus")
                                 .foregroundStyle(.black.opacity(0.5))
                                 .font(.largeTitle)
@@ -46,7 +47,7 @@ struct NewTaskView: View {
                                 .frame(width: 192, height: 120)
                                 .foregroundStyle(.white)
                                 .opacity(0.6)
-
+                            
                             Image(systemName: "plus")
                                 .foregroundStyle(.black.opacity(0.5))
                                 .font(.largeTitle)
@@ -84,8 +85,6 @@ struct NewTaskView: View {
 }
 
 #Preview {
-    NavigationStack{
-        NewTaskView()
-    }
+    NewTaskView()
     
 }

@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TimerView: View {
     @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) var context
     @AppStorage("isWorking") var isWorking: Bool = false
+    
+    @Query var tasks: [Tasks]
     
     @State var hour:Int=0
     @State var minute:Int=0
@@ -20,7 +24,6 @@ struct TimerView: View {
         ZStack{
             Color.lightBlue.ignoresSafeArea()
             
-            
             VStack{
                 VStack{
                     Text(emoji).foregroundColor(.darkBlue).font(.custom("SF Pro",size:50))
@@ -30,14 +33,16 @@ struct TimerView: View {
                 ChooseTime(hour:$hour, minute:$minute, second:$second)
                 
                 Spacer()
-                Button(action:{
-                    
-                },label:{
+                
+                NavigationLink {
+                    OngoingTimerView()
+                } label: {
                     VStack{
                         Image(systemName:"arrowshape.right.fill").foregroundColor(.darkBlue).font(.custom("SF Pro",size:50))
                         
                     }.frame(width:120, height:75).background(.whiteBlue).cornerRadius(10)
-                })
+                }
+
                 Spacer()
             }
 
@@ -48,7 +53,9 @@ struct TimerView: View {
                 Button(action: {
                     dismiss()
                 }, label: {
-                    Menu()
+                    Image(systemName: "chevron.left")
+                        .imageScale(.large)
+                        .bold()
                 })
                 .foregroundStyle(.darkBlue)
             }
@@ -56,20 +63,6 @@ struct TimerView: View {
     }
 }
 
-struct Menu : View{
-    var body : some View{
-        HStack{
-            VStack{
-                Rectangle().frame(width:28,height:4.67).cornerRadius(2)
-                Spacer()
-                Rectangle().frame(width:28,height:4.67).cornerRadius(2)
-                Spacer()
-                Rectangle().frame(width:28,height:4.67).cornerRadius(2)
-                
-            }.frame(width:28,height:28).padding(.leading,10)
-        }
-    }
-}
 
 struct ChooseTime:View{
     @Binding var hour:Int
@@ -81,10 +74,18 @@ struct ChooseTime:View{
             VStack{
                 IncreaseButton(parameter:$hour,border:22)
                 if hour>9{
-                    Text("\(hour)").foregroundColor(.darkBlue).font(.custom("SF Pro", size: 60)).fontWeight(.medium)
+                    Text("\(hour)")
+                        .foregroundColor(.darkBlue)
+                        .font(.custom("SF Pro", size: 50))
+                        .fontWeight(.medium)
+                        .fontDesign(.rounded)
                 }
                 else{
-                    Text("0\(hour)").foregroundColor(.darkBlue).font(.custom("SF Pro", size: 60)).fontWeight(.medium)
+                    Text("0\(hour)")
+                        .foregroundColor(.darkBlue)
+                        .font(.custom("SF Pro", size: 50))
+                        .fontWeight(.medium)
+                        .fontDesign(.rounded)
                 }
                 DecreaseButton(parameter:$hour, border:1)
             }
@@ -94,10 +95,18 @@ struct ChooseTime:View{
             VStack{
                 IncreaseButton(parameter:$minute, border:58)
                 if minute>9{
-                    Text("\(minute)").foregroundColor(.darkBlue).font(.custom("SF Pro", size: 60)).fontWeight(.medium)
+                    Text("\(minute)")
+                        .foregroundColor(.darkBlue)
+                        .font(.custom("SF Pro", size: 50))
+                        .fontWeight(.medium)
+                        .fontDesign(.rounded)
                 }
                 else{
-                    Text("0\(minute)").foregroundColor(.darkBlue).font(.custom("SF Pro", size: 60)).fontWeight(.medium)
+                    Text("0\(minute)")
+                        .foregroundColor(.darkBlue)
+                        .font(.custom("SF Pro", size: 50))
+                        .fontWeight(.medium)
+                        .fontDesign(.rounded)
                 }
                 DecreaseButton(parameter:$minute, border:1)
             }
@@ -107,10 +116,12 @@ struct ChooseTime:View{
             VStack{
                 IncreaseButton(parameter:$second, border:58)
                 if second>9{
-                    Text("\(second)").foregroundColor(.darkBlue).font(.custom("SF Pro", size: 60)).fontWeight(.medium)
+                    Text("\(second)").foregroundColor(.darkBlue).font(.custom("SF Pro", size: 50)).fontWeight(.medium)
+                        .fontDesign(.rounded)
                 }
                 else{
-                    Text("0\(second)").foregroundColor(.darkBlue).font(.custom("SF Pro", size: 60)).fontWeight(.medium)
+                    Text("0\(second)").foregroundColor(.darkBlue).font(.custom("SF Pro", size: 50)).fontWeight(.medium)
+                        .fontDesign(.rounded)
                 }
                 DecreaseButton(parameter:$second, border:1)
             }
@@ -122,8 +133,10 @@ struct ChooseTime:View{
 struct Colon : View{
     var body : some View{
         VStack{
-            Text("").frame(height:35)
+            Text("").frame(height:25)
+                .fontDesign(.rounded)
             Text(":").foregroundColor(.darkBlue).font(.custom("SF Pro", size: 60)).fontWeight(.medium)
+                .fontDesign(.rounded)
             Text("").frame(height:35)
         }
     }
@@ -137,6 +150,8 @@ struct IncreaseButton : View{
         Button{
             if(parameter<=border){
                 parameter = parameter + 1
+            }else{
+                parameter = 0
             }
         }label:{
             VStack{
@@ -159,6 +174,8 @@ struct DecreaseButton : View{
         Button{
             if(parameter>=border){
                 parameter = parameter - 1
+            }else{
+                parameter = 59
             }
         }label:{
             VStack{

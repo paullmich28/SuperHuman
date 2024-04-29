@@ -8,15 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
-    @AppStorage("isWorking") var isWorking: Bool = false
     
     var body: some View {
         NavigationStack{
-            if isWorking{
-                WorkingView()
-            }else{
-                DefaultView()
-            }
+            DefaultView()
         }
     }
 }
@@ -52,9 +47,9 @@ struct DefaultView: View {
             }
         }
         .toolbar(content: {
-            ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
+            ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading){
                 NavigationLink {
-                    TrackRecordsView()
+                    ListTaskView()
                 } label: {
                     Image(systemName: "list.bullet")
                         .bold()
@@ -62,11 +57,21 @@ struct DefaultView: View {
                 }
             }
             
-            ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading){
+            ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
+                NavigationLink {
+                    TrackRecordsView()
+                } label: {
+                    Image(systemName: "chart.bar.doc.horizontal")
+                        .bold()
+                        .foregroundStyle(.darkBlue)
+                }
+            }
+            
+            ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing){
                 NavigationLink{
                     TrophyListView()
                 } label: {
-                    Image(systemName: "trophy.circle")
+                    Image(systemName: "trophy")
                         .bold()
                         .foregroundStyle(.darkBlue)
                 }
@@ -76,47 +81,10 @@ struct DefaultView: View {
                 NavigationLink {
                     NewTaskView()
                 } label: {
-                    Image(systemName: "plus")
+                    Image(systemName: "plus.circle.fill")
                         .bold()
                         .foregroundStyle(.darkBlue)
                 }
-            }
-        })
-    }
-}
-
-struct WorkingView: View {
-    @Environment(\.dismiss) var dismiss
-    @AppStorage("isWorking") var isWorking: Bool = false
-    
-    var body: some View {
-        ZStack{
-            Color.lightBlue.ignoresSafeArea()
-            
-            VStack{
-                Text("00:00:00")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                    .fontDesign(.rounded)
-                
-                Button("Click Me"){
-                    isWorking.toggle()
-                }
-            }
-        }
-        .navigationBarBackButtonHidden(true)
-        .toolbar(content: {
-            ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
-                Button(action: {
-                    dismiss()
-                }, label: {
-                    HStack{
-                        Image(systemName: "chevron.left")
-                            .imageScale(.large)
-                            .bold()
-                    }
-                })
-                .foregroundStyle(.darkBlue)
             }
         })
     }

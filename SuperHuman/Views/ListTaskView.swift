@@ -11,12 +11,17 @@ import SwiftData
 struct ListTaskView: View {
     @Environment(\.dismiss) var dismiss
     
+    @Query var tasks: [Tasks]
+    
     var body: some View {
         ZStack{
             Color.lightBlue.ignoresSafeArea()
             
             VStack{
-                
+                if tasks.isEmpty{
+                    AnimationView(name: "empty", loopMode: .loop, animationSpeed: 0.5)
+                        .scaleEffect(0.9)
+                }
             }
         }
         .navigationBarBackButtonHidden(true)

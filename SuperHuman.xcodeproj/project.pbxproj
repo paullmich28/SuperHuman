@@ -16,7 +16,6 @@
 		AC06A5EE2BDB829A00ACF43F /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5ED2BDB829A00ACF43F /* Tasks.swift */; };
 		AC06A5F02BDB911100ACF43F /* TrackRecords.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5EF2BDB911100ACF43F /* TrackRecords.swift */; };
 		AC06A5F22BDB950200ACF43F /* TrophyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5F12BDB950200ACF43F /* TrophyListView.swift */; };
-		AC06A5F42BDB951500ACF43F /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5F32BDB951500ACF43F /* Users.swift */; };
 		AC06A5F62BDC8E9900ACF43F /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5F52BDC8E9900ACF43F /* NewTaskView.swift */; };
 		AC06A5F82BDC955000ACF43F /* ListTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC06A5F72BDC955000ACF43F /* ListTaskView.swift */; };
 		AC1D4E3F2BDD6C41004DB7E6 /* AccomplishmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1D4E3E2BDD6C41004DB7E6 /* AccomplishmentView.swift */; };
@@ -27,10 +26,12 @@
 		AC5E9E1D2BDE02D10060841D /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5E9E1C2BDE02D10060841D /* TaskDetailView.swift */; };
 		AC5E9E222BDE38740060841D /* happy.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5E9E202BDE38740060841D /* happy.json */; };
 		AC5E9E232BDE38740060841D /* hourglass.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5E9E212BDE38740060841D /* hourglass.json */; };
+		AC5E9E332BDF3F130060841D /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5E9E322BDF3F130060841D /* empty.json */; };
+		AC5E9E372BDF5AE90060841D /* MedalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5E9E362BDF5AE90060841D /* MedalView.swift */; };
+		AC5E9E452BDF61250060841D /* hooray.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5E9E442BDF61250060841D /* hooray.json */; };
 		ACD852402BDA388C00812E29 /* AudioRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */; };
 		ACD852422BDA3AFF00812E29 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD852412BDA3AFF00812E29 /* HomeView.swift */; };
 		ACD852442BDB3D2500812E29 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD852432BDB3D2500812E29 /* TimerView.swift */; };
-		C0ED44B62BDF3DA1004439CE /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = C0ED44B52BDF3DA1004439CE /* empty.json */; };
 		C0FE524F2BDE884F00D567E8 /* newHourGlass.json in Resources */ = {isa = PBXBuildFile; fileRef = C0FE524E2BDE884F00D567E8 /* newHourGlass.json */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +47,6 @@
 		AC06A5ED2BDB829A00ACF43F /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		AC06A5EF2BDB911100ACF43F /* TrackRecords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRecords.swift; sourceTree = "<group>"; };
 		AC06A5F12BDB950200ACF43F /* TrophyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrophyListView.swift; sourceTree = "<group>"; };
-		AC06A5F32BDB951500ACF43F /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		AC06A5F52BDC8E9900ACF43F /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		AC06A5F72BDC955000ACF43F /* ListTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTaskView.swift; sourceTree = "<group>"; };
 		AC1D4E3E2BDD6C41004DB7E6 /* AccomplishmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccomplishmentView.swift; sourceTree = "<group>"; };
@@ -57,10 +57,12 @@
 		AC5E9E1C2BDE02D10060841D /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		AC5E9E202BDE38740060841D /* happy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = happy.json; sourceTree = "<group>"; };
 		AC5E9E212BDE38740060841D /* hourglass.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hourglass.json; sourceTree = "<group>"; };
+		AC5E9E322BDF3F130060841D /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = empty.json; path = "../../../../SwiftUI Assets/SuperHuman assets/Animations/empty.json"; sourceTree = "<group>"; };
+		AC5E9E362BDF5AE90060841D /* MedalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalView.swift; sourceTree = "<group>"; };
+		AC5E9E442BDF61250060841D /* hooray.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = hooray.json; path = "../../../../SwiftUI Assets/SuperHuman assets/Animations/hooray.json"; sourceTree = "<group>"; };
 		ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingView.swift; sourceTree = "<group>"; };
 		ACD852412BDA3AFF00812E29 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ACD852432BDB3D2500812E29 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
-		C0ED44B52BDF3DA1004439CE /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = empty.json; path = ../../../../../../Downloads/empty.json; sourceTree = "<group>"; };
 		C0FE524E2BDE884F00D567E8 /* newHourGlass.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = newHourGlass.json; sourceTree = "<group>"; };
 		F50D771EEE2D6D14E0A22BAC /* Pods-SuperHuman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperHuman.debug.xcconfig"; path = "Target Support Files/Pods-SuperHuman/Pods-SuperHuman.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,7 +132,6 @@
 			children = (
 				AC06A5ED2BDB829A00ACF43F /* Tasks.swift */,
 				AC06A5EF2BDB911100ACF43F /* TrackRecords.swift */,
-				AC06A5F32BDB951500ACF43F /* Users.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,7 +139,8 @@
 		AC1D4E422BDD6E05004DB7E6 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				C0ED44B52BDF3DA1004439CE /* empty.json */,
+				AC5E9E442BDF61250060841D /* hooray.json */,
+				AC5E9E322BDF3F130060841D /* empty.json */,
 				AC5E9E202BDE38740060841D /* happy.json */,
 				C0FE524E2BDE884F00D567E8 /* newHourGlass.json */,
 				AC5E9E212BDE38740060841D /* hourglass.json */,
@@ -170,6 +172,7 @@
 				AC22DD522BDD13BE0037DDD3 /* OngoingTimerView.swift */,
 				AC1D4E3E2BDD6C41004DB7E6 /* AccomplishmentView.swift */,
 				AC5E9E1C2BDE02D10060841D /* TaskDetailView.swift */,
+				AC5E9E362BDF5AE90060841D /* MedalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,11 +246,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0ED44B62BDF3DA1004439CE /* empty.json in Resources */,
+				AC5E9E332BDF3F130060841D /* empty.json in Resources */,
 				AC5E9E222BDE38740060841D /* happy.json in Resources */,
 				AC1D4E442BDD6EA1004DB7E6 /* crying.json in Resources */,
 				AC5E9E232BDE38740060841D /* hourglass.json in Resources */,
 				AC05A8092BDA103F00040B50 /* Preview Assets.xcassets in Resources */,
+				AC5E9E452BDF61250060841D /* hooray.json in Resources */,
 				AC05A8062BDA103F00040B50 /* Assets.xcassets in Resources */,
 				C0FE524F2BDE884F00D567E8 /* newHourGlass.json in Resources */,
 			);
@@ -306,12 +310,12 @@
 				AC06A5EE2BDB829A00ACF43F /* Tasks.swift in Sources */,
 				ACD852442BDB3D2500812E29 /* TimerView.swift in Sources */,
 				AC22DD562BDD1BC60037DDD3 /* RecordView.swift in Sources */,
-				AC06A5F42BDB951500ACF43F /* Users.swift in Sources */,
 				AC22DD532BDD13BE0037DDD3 /* OngoingTimerView.swift in Sources */,
 				AC06A5EB2BDB816B00ACF43F /* TrackRecordsView.swift in Sources */,
 				AC05A8042BDA103E00040B50 /* ContentView.swift in Sources */,
 				AC06A5F02BDB911100ACF43F /* TrackRecords.swift in Sources */,
 				AC1D4E412BDD6D72004DB7E6 /* AnimationView.swift in Sources */,
+				AC5E9E372BDF5AE90060841D /* MedalView.swift in Sources */,
 				AC06A5F82BDC955000ACF43F /* ListTaskView.swift in Sources */,
 				ACD852422BDA3AFF00812E29 /* HomeView.swift in Sources */,
 				AC1D4E3F2BDD6C41004DB7E6 /* AccomplishmentView.swift in Sources */,

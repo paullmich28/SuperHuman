@@ -26,22 +26,15 @@ struct OngoingTimerView: View {
                 }.frame(width:120, height:75).background(.darkBlue).cornerRadius(10)
                 
                 Spacer()
+                
                 //AnimationView(name:"hourglass",loopMode:.loop, animationSpeed:10)
                 CountDown(hour:$hour, minute:$minute, second:$second)
-                
-                Spacer()
                 
                 if(hour==0 && minute==0 && second==0){
                     DoneOrNot()
                 }
                 
-                //AnimationView(name:"hourglass",loopMode:.loop,animationSpeed: 1)
                 Spacer()
-            }
-            
-            
-            VStack{
-                
             }
             
         }.navigationBarBackButtonHidden(true)
@@ -50,7 +43,8 @@ struct OngoingTimerView: View {
                 Button(action: {
                     dismiss()
                 }, label: {
-                    Menu()
+                    Image(systemName: "chevron.left")
+                        .bold()
                 })
                 .foregroundStyle(.darkBlue)
             }
@@ -97,29 +91,37 @@ struct CountDown:View{
         HStack{
             if hour>9{
                 Text("\(hour)").foregroundColor(.darkBlue).font(.custom("SF Pro",size:50))
+                    .fontDesign(.rounded)
             }
             else{
                 Text("0\(hour)").foregroundColor(.darkBlue).font(.custom("SF Pro",size:50))
+                    .fontDesign(.rounded)
             }
 
             Text(" : ").foregroundColor(.darkBlue).font(.custom("SF Pro",size:50))
+                .fontDesign(.rounded)
             
             if minute>9{
                 Text("\(minute)").foregroundColor(.darkBlue).font(.custom("SF Pro",size:50))
+                    .fontDesign(.rounded)
 
             }
             else{
                 Text("0\(minute)").foregroundColor(.darkBlue).font(.custom("SF Pro",size:50))
+                    .fontDesign(.rounded)
             }
             
             Text(" : ").foregroundColor(.darkBlue).font(.custom("SF Pro",size:50))
+                .fontDesign(.rounded)
             
             if second>9{
                 Text("\(second)").foregroundColor(.darkBlue).font(.custom("SF Pro",size:50))
+                    .fontDesign(.rounded)
 
             }
             else{
                 Text("0\(second)").foregroundColor(.darkBlue).font(.custom("SF Pro",size:50))
+                    .fontDesign(.rounded)
             }
 
         }
@@ -150,5 +152,7 @@ struct CountDown:View{
 }
 
 #Preview {
-    OngoingTimerView()
+    NavigationStack{
+        OngoingTimerView()
+    }
 }

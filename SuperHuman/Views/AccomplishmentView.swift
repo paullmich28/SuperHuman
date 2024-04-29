@@ -33,8 +33,6 @@ struct AccomplishmentView: View {
                             }
                         }
                 }
-                
-                
             }
         }
         .navigationBarBackButtonHidden(true)

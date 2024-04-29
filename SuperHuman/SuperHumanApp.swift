@@ -20,8 +20,7 @@ struct SuperHumanApp: App {
             ContentView()
                 .modelContainer(for: [
                     Tasks.self,
-                    TrackRecords.self,
-                    Users.self
+                    TrackRecords.self
                 ])
         }
     }
