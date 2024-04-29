@@ -9,6 +9,8 @@ import SwiftUI
 import SwiftData
 
 struct TrophyListView: View {
+    @Environment(\.dismiss) var dismiss
+    
     @AppStorage("goldMedals") var goldMedals = 0
     @AppStorage("silverMedals") var silverMedals = 0
     @AppStorage("bronzeMedals") var bronzeMedals = 0
@@ -90,6 +92,21 @@ struct TrophyListView: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar(content: {
+            ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    HStack{
+                        Image(systemName: "chevron.left")
+                            .imageScale(.large)
+                            .bold()
+                    }
+                })
+                .foregroundStyle(.darkBlue)
+            }
+        })
     }
 }
 

@@ -64,7 +64,7 @@ struct DefaultView: View {
             
             ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading){
                 NavigationLink{
-                    ListTaskView()
+                    TrophyListView()
                 } label: {
                     Image(systemName: "trophy.circle")
                         .bold()
