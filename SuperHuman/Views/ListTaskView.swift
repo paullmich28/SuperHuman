@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ListTaskView: View {
     @Environment(\.dismiss) var dismiss
@@ -15,9 +16,7 @@ struct ListTaskView: View {
             Color.lightBlue.ignoresSafeArea()
             
             VStack{
-                // Ngetes animasi (bisa anjay)
-                AnimationView(name: "crying", loopMode: .loop, animationSpeed: 1)
-                    .frame(width: 50, height: 50)
+                
             }
         }
         .navigationBarBackButtonHidden(true)
