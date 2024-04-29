@@ -12,12 +12,15 @@ struct MedalView: View {
         ZStack{
             Color.lightBlue.ignoresSafeArea()
             
+            VStack{
+                Image("goldMedal")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100)
+            }
+            
             AnimationView(name: "hooray", loopMode: .playOnce, animationSpeed: 1.0)
                 .scaleEffect(2)
-            
-            VStack{
-                
-            }
         }
     }
 }

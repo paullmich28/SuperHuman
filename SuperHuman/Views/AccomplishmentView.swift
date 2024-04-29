@@ -37,7 +37,7 @@ struct AccomplishmentView: View {
                         }
                 }
                 else{
-                    AnimationView(name: "crying", loopMode: .loop, animationSpeed: 1.0)
+                    AnimationView(name: "crying", loopMode: .loop, animationSpeed: 2.0)
                         .scaleEffect(0.8)
                         .onAppear {
                             // Start the animation and darken the background for a few seconds

@@ -49,7 +49,8 @@ struct OngoingTimerView: View {
                 Spacer()
             }
 
-        }//.navigationBarBackButtonHidden(true)
+        }
+        .navigationBarBackButtonHidden(true)
         .toolbar(content: { ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
                 Button(action: {
                     dismiss()
