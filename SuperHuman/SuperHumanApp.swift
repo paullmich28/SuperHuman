@@ -14,6 +14,8 @@ struct SuperHumanApp: App {
     @AppStorage("silverMedals") var silverMedals = 0
     @AppStorage("bronzeMedals") var bronzeMedals = 0
     @AppStorage("trophies") var trophies = 0
+    @AppStorage("productivityScale") var prodScale = 0.0
+    @AppStorage("duration") var duration = 0
     
     var body: some Scene {
         WindowGroup {

@@ -11,6 +11,8 @@ import Lottie
 struct OngoingTimerView: View {
     @Environment(\.dismiss) var dismiss
 
+    @Binding var path: NavigationPath
+    
     @State var hour:Int=0
     @State var minute:Int=0
     @State var second:Int=2
@@ -71,7 +73,7 @@ struct OngoingTimerView: View {
                         }
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                        dismiss()
+                        path = NavigationPath()
                     }
                 }
                 
@@ -84,8 +86,9 @@ struct OngoingTimerView: View {
                             goHome = true
                         }
                     }
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                        dismiss()
+                        path = NavigationPath()
                     }
                 }
             }
@@ -196,9 +199,9 @@ struct CountDown:View{
     }
 }
 
-#Preview {
-    NavigationStack{
-        OngoingTimerView()
-
-    }
-}
+//#Preview {
+//    NavigationStack{
+//        OngoingTimerView()
+//
+//    }
+//}

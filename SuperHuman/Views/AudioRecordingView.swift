@@ -15,13 +15,19 @@ struct AudioRecordingView: View {
     @State var recorder: AVAudioRecorder!
     @State var audioPlayer : AVAudioPlayer!
     
+    @Binding var path: NavigationPath
+    
     @State var alert = false
+    
+    @State var txt = ""
+    @State var show = false
     
     @State var record = false
     @State var offsetRecord = 0.0
     @State var circleSize: CGFloat = 0.0
     @State var isRecorded = false
     @State var audio = ""
+    @State var icon = ""
     
     @State var audios: [URL] = []
     
@@ -32,6 +38,19 @@ struct AudioRecordingView: View {
             Color.lightBlue.ignoresSafeArea()
             
             VStack{
+//                ZStack{
+//                    TextFieldWrapperView(text: $icon)
+//                        .background(Color.white.opacity(0.5))
+//                        .cornerRadius(20.0)
+//                        .offset(y: 100)
+//                        .frame(width: 192, height: 120)
+//                    
+//                    Image(systemName: "plus")
+//                        .foregroundStyle(.black.opacity(0.5))
+//                        .font(.largeTitle)
+//                        .offset(y: 100)
+//                }
+                
                 Spacer()
                 
                 HStack(spacing: 30){
@@ -138,7 +157,7 @@ struct AudioRecordingView: View {
                 
                 if isRecorded{
                     NavigationLink {
-                        TimerView()
+                        TimerView(path: $path)
                     } label: {
                         VStack{
                             Image(systemName:"arrowshape.right.fill").foregroundColor(.darkBlue).font(.custom("SF Pro",size:50))
@@ -305,7 +324,7 @@ struct AudioRecordingView: View {
         audioPlayer.stop()
     }
 }
-
-#Preview {
-    AudioRecordingView()
-}
+//
+//#Preview {
+//    AudioRecordingView()
+//}

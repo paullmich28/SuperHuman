@@ -24,7 +24,7 @@ struct ProductivityScaleView: View {
                     .rotationEffect(.degrees(-90))
                 
                 VStack{
-                    Text("0%")
+                    Text("\((pct * 100), specifier: "%.0f")%")
                         .font(.system(size: 70))
                         .bold()
                 }

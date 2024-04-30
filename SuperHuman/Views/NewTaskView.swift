@@ -11,7 +11,8 @@ import SwiftData
 struct NewTaskView: View {
     @Environment(\.dismiss) var dismiss
     @State var taskIndex: Int = 0
-    @State private var path: [String] = []
+    
+    @Binding var path: NavigationPath
     
     @Query(sort: \Tasks.timestamp) var tasks: [Tasks]
     
@@ -40,7 +41,7 @@ struct NewTaskView: View {
                 
                 if(tasks.count < 3){
                     NavigationLink {
-                        AudioRecordingView()
+                        AudioRecordingView(path: $path)
                     } label: {
                         ZStack{
                             RoundedRectangle(cornerSize: CGSize(width: 20, height: 20))
@@ -58,7 +59,7 @@ struct NewTaskView: View {
                 
                 if tasks.count == 3{
                     NavigationLink{
-                        TimerView()
+                        TimerView(path: $path)
                     } label: {
                         RoundedRectangle(cornerSize: CGSize(width: 20, height: 20))
                             .frame(width: 192, height: 75)
@@ -83,8 +84,8 @@ struct NewTaskView: View {
         })
     }
 }
-
-#Preview {
-    NewTaskView()
-    
-}
+//
+//#Preview {
+//    NewTaskView()
+//    
+//}

@@ -27,6 +27,7 @@ struct TrophyListView: View {
                         .scaledToFit()
                         .frame(width: 135)
                         .padding([.bottom], -15)
+                        .shadow(color: .black.opacity(0.25), radius: 5, x: 4, y: 4)
                 }else{
                     Image("piala-kosong")
                         .resizable()
@@ -39,6 +40,7 @@ struct TrophyListView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 300)
+                    .shadow(color: .black.opacity(0.25), radius: 5, x: 4, y: 4)
                 
                 HStack{
                     ZStack {
@@ -46,10 +48,13 @@ struct TrophyListView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 50)
+                            .shadow(color: .black.opacity(0.25), radius: 5, x: 4, y: 4)
+                        
                         Image("frame")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 100)
+                            .shadow(color: .black.opacity(0.25), radius: 5, x: 4, y: 4)
                     }
                     
                     Text("X\(goldMedals)")
@@ -65,11 +70,13 @@ struct TrophyListView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 50)
+                            .shadow(color: .black.opacity(0.25), radius: 5, x: 4, y: 4)
                         
                         Image("frame")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 100)
+                            .shadow(color: .black.opacity(0.25), radius: 5, x: 4, y: 4)
                     }
                     
                     Text("X\(silverMedals)")
@@ -85,11 +92,13 @@ struct TrophyListView: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 50)
+                            .shadow(color: .black.opacity(0.25), radius: 5, x: 4, y: 4)
                         
                         Image("frame")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 100)
+                            .shadow(color: .black.opacity(0.25), radius: 5, x: 4, y: 4)
                     }
                     
                     Text("X\(bronzeMedals)")

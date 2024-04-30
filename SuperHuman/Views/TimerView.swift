@@ -11,7 +11,8 @@ import SwiftData
 struct TimerView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
-    @AppStorage("isWorking") var isWorking: Bool = false
+    
+    @Binding var path: NavigationPath
     
     @Query var tasks: [Tasks]
     
@@ -35,7 +36,7 @@ struct TimerView: View {
                 Spacer()
                 
                 NavigationLink {
-                    OngoingTimerView()
+                    OngoingTimerView(path: $path)
                 } label: {
                     VStack{
                         Image(systemName:"arrowshape.right.fill").foregroundColor(.darkBlue).font(.custom("SF Pro",size:50))
@@ -189,9 +190,9 @@ struct DecreaseButton : View{
         }
     }
 }
-
-#Preview {
-    NavigationStack{
-        TimerView(emoji:"😊")
-    }
-}
+//
+//#Preview {
+//    NavigationStack{
+//        TimerView(emoji:"😊")
+//    }
+//}
