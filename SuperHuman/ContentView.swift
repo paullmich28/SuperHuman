@@ -10,7 +10,10 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) var context
+    @Environment(\.dismiss) var dismiss
+    
     @Query var tasks: [Tasks]
+    @State var corrects: Int = 0
     
     var body: some View {
         NavigationStack {

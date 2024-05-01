@@ -137,6 +137,9 @@ struct AudioRecordingView: View {
                         .cornerRadius(10)
                     }
                     .offset(y: -80)
+                    .onTapGesture {
+                        self.getAudios()
+                    }
                     
                 }
             }
