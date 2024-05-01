@@ -11,6 +11,7 @@ import AVKit
 
 struct ListTaskView: View {
     @Environment(\.dismiss) var dismiss
+    @State private var selectedIndex: Int? = nil
     
     @Query var tasks: [Tasks]
     
@@ -24,9 +25,13 @@ struct ListTaskView: View {
                         .scaleEffect(0.9)
                 }else{
                     ScrollView{
-                        ForEach(tasks, id: \.self){ task in
-                            TaskView(icon: task.icon, url: task.audio, durationHour: task.durationHour, durationMinute: task.durationMinute, durationSeconds: task.durationSecond)
-                                .padding()
+                        ForEach(0..<tasks.count, id: \.self){ index in
+                            NavigationLink {
+                                OngoingTimerView(index: index)
+                            } label: {
+                                TaskView(icon: tasks[index].icon, url: tasks[index].audio, durationHour: tasks[index].durationHour, durationMinute: tasks[index].durationMinute, durationSeconds: tasks[index].durationSecond, isCompleted: tasks[index].isCompleted)
+                                    .padding()
+                            }
                         }
                     }
                 }

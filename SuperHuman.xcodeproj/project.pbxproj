@@ -33,7 +33,6 @@
 		AC5E9E4F2BE073160060841D /* ProductivityScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5E9E4E2BE073160060841D /* ProductivityScaleView.swift */; };
 		AC5E9E512BE093B00060841D /* EmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5E9E502BE093B00060841D /* EmojiView.swift */; };
 		AC5E9E532BE0C0270060841D /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5E9E522BE0C0270060841D /* TaskView.swift */; };
-		AC5E9E572BE10E8A0060841D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5E9E562BE10E8A0060841D /* ViewModel.swift */; };
 		ACA66E472BE13DA40069DA02 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA66E462BE13DA40069DA02 /* NavigationUtil.swift */; };
 		ACD852402BDA388C00812E29 /* AudioRecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */; };
 		ACD852422BDA3AFF00812E29 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD852412BDA3AFF00812E29 /* HomeView.swift */; };
@@ -69,7 +68,6 @@
 		AC5E9E4E2BE073160060841D /* ProductivityScaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductivityScaleView.swift; sourceTree = "<group>"; };
 		AC5E9E502BE093B00060841D /* EmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiView.swift; sourceTree = "<group>"; };
 		AC5E9E522BE0C0270060841D /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
-		AC5E9E562BE10E8A0060841D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		ACA66E462BE13DA40069DA02 /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
 		ACD8523F2BDA388C00812E29 /* AudioRecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingView.swift; sourceTree = "<group>"; };
 		ACD852412BDA3AFF00812E29 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 			children = (
 				AC06A5ED2BDB829A00ACF43F /* Tasks.swift */,
 				AC06A5EF2BDB911100ACF43F /* TrackRecords.swift */,
-				AC5E9E562BE10E8A0060841D /* ViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,7 +331,6 @@
 				AC5E9E372BDF5AE90060841D /* MedalView.swift in Sources */,
 				AC06A5F82BDC955000ACF43F /* ListTaskView.swift in Sources */,
 				AC5E9E512BE093B00060841D /* EmojiView.swift in Sources */,
-				AC5E9E572BE10E8A0060841D /* ViewModel.swift in Sources */,
 				ACD852422BDA3AFF00812E29 /* HomeView.swift in Sources */,
 				ACA66E472BE13DA40069DA02 /* NavigationUtil.swift in Sources */,
 				AC1D4E3F2BDD6C41004DB7E6 /* AccomplishmentView.swift in Sources */,

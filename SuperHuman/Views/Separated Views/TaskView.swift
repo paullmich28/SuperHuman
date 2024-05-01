@@ -18,6 +18,7 @@ struct TaskView: View {
     var durationHour: Int
     var durationMinute: Int
     var durationSeconds: Int
+    var isCompleted: Bool
     
     var body: some View {
         VStack{
@@ -53,7 +54,7 @@ struct TaskView: View {
             }
         }
         .padding(20)
-        .background(color)
+        .background(isCompleted ? .green : .darkBlue)
         .cornerRadius(10.0)
         .shadow(color: .black.opacity(0.25), radius: 5, x: 4, y: 4)
     }

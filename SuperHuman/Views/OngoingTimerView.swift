@@ -7,20 +7,27 @@
 
 import SwiftUI
 import Lottie
+import SwiftData
 
 struct OngoingTimerView: View {
     @Environment(\.dismiss) var dismiss
 
-    @Binding var path: NavigationPath
+//    @Binding var path: NavigationPath
+    
+    var index: Int
     
     @State var hour:Int=0
     @State var minute:Int=0
-    @State var second:Int=2
+    @State var second:Int=10
     
+    @State var isPlaying = false
     @State var isDone:Bool=false
     @State var isNotDone:Bool=false
     @State var scaleEffect:Double = 0.8
     @State var goHome:Bool = false
+    @State var animMode: LottieLoopMode = .loop
+    
+    @Query var tasks: [Tasks]
     
     var emoji:String="😍"
     
@@ -34,18 +41,30 @@ struct OngoingTimerView: View {
                 
                 Spacer()
   
-                CountDown(hour:$hour, minute:$minute, second:$second)
+                CountDown(hour:$hour, minute:$minute, second:$second, isPlaying: $isPlaying)
                 
                 Spacer()
                 
-                AnimationView(name:"hourglass",loopMode:.loop, animationSpeed:1).scaleEffect(0.8)
+                AnimationView(name:"hourglass",loopMode: animMode, animationSpeed:1).scaleEffect(0.8)
                     .frame(width:300,height:350)
                 
-                if(hour==0 && minute==0 && second==0){
+                if isTimeOut(hour: hour, minute: minute, second: second){
                     Spacer()
                     DoneOrNot(isDone:$isDone, isNotDone:$isNotDone).onAppear{
                         scaleEffect=0.5
                     }
+                }
+                
+                if !isPlaying{
+                    Button(action: {
+                        //dismiss()
+                        isPlaying=true
+                    }, label: {
+                        VStack{
+                            Image(systemName:"play.fill").foregroundColor(Color.whiteBlue).font(.custom("SF Pro",size:50))
+                        }.frame(width:120,height:75).background(Color.darkBlue).cornerRadius(10)
+                    })
+                    .padding()
                 }
                 
                 Spacer()
@@ -66,6 +85,8 @@ struct OngoingTimerView: View {
         .overlay(alignment:.center){
             if(isDone){
                 AccomplishmentView(isDone:true).onAppear{
+                    tasks[index].isCompleted = true
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         withAnimation {
                             isDone = false
@@ -73,13 +94,15 @@ struct OngoingTimerView: View {
                         }
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                        path = NavigationPath()
+                        NavigationUtil.popToRootView(animated: true)
                     }
                 }
                 
             }
             if(isNotDone){
                 AccomplishmentView(isDone:false).onAppear{
+                    tasks[index].isCompleted = true
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         withAnimation {
                             isDone = false
@@ -88,13 +111,22 @@ struct OngoingTimerView: View {
                     }
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-                        path = NavigationPath()
+                        NavigationUtil.popToRootView(animated: true)
                     }
                 }
             }
       
         }
         
+    }
+    
+    func isTimeOut(hour: Int, minute: Int, second: Int) -> Bool{
+        if(hour==0 && minute==0 && second==0){
+            self.animMode = .playOnce
+            return true
+        }else{
+            return false
+        }
     }
 }
 
@@ -135,6 +167,7 @@ struct CountDown:View{
     @Binding var hour:Int
     @Binding var minute:Int
     @Binding var second:Int
+    @Binding var isPlaying: Bool
     
     let timer = Timer.publish(every:1, on:.main, in:.common).autoconnect()
 
@@ -176,25 +209,26 @@ struct CountDown:View{
             }
 
         }
-        .onReceive(timer){_ in 
-            if(second==0){
-                if(minute==0){
-                    if(hour != 0){
-                        hour = hour - 1
-                        minute = 59
-                        second = 59
+        .onReceive(timer){_ in
+            if isPlaying{
+                if(second==0){
+                    if(minute==0){
+                        if(hour != 0){
+                            hour = hour - 1
+                            minute = 59
+                            second = 59
+                        }
+                    }
+                    else{
+                        minute = minute - 1
+                        second=59
                     }
                 }
                 else{
-                    minute = minute - 1
-                    second=59
+                    second = second - 1
+
                 }
             }
-            else{
-                second = second - 1
-
-            }
-
         }
     }
 }

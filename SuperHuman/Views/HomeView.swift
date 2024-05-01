@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var viewModel = ViewModel()
     @AppStorage("productivityScale") var prodScale = 0.0
     
     var body: some View {
