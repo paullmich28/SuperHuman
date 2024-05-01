@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MedalView: View {
     @AppStorage("productivityScale") var prodScale = 0.0
+    @Query var tasks: [Tasks]
     
     var body: some View {
         ZStack{
@@ -30,21 +32,21 @@ struct MedalView: View {
                 ProductivityScaleView(streak: prodScale)
                     .padding(75)
                 
-                HStack{
-                    ForEach(1..<4){_ in
-                        ZStack{
-                            RoundedRectangle(cornerSize: CGSize(width: 20, height: 20))
-                                .frame(width: 110, height: 85)
-                                .foregroundStyle(.white)
-                                .opacity(0.6)
-                            
-                            Image(systemName: "plus")
-                                .foregroundStyle(.black.opacity(0.5))
-                                .font(.largeTitle)
-                        }
-                        .padding([.vertical], 20)
-                    }
-                }
+//                HStack{
+//                    ForEach(tasks, id: \.self){task in
+//                        ZStack{
+//                            RoundedRectangle(cornerSize: CGSize(width: 20, height: 20))
+//                                .frame(width: 110, height: 85)
+//                                .foregroundStyle(.white)
+//                                .opacity(0.6)
+//                            
+//                            Image(systemName: "plus")
+//                                .foregroundStyle(.black.opacity(0.5))
+//                                .font(.largeTitle)
+//                        }
+//                        .padding([.vertical], 20)
+//                    }
+//                }
             }
             
             AnimationView(name: "hooray", loopMode: .playOnce, animationSpeed: 1.0)

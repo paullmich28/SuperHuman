@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import AVKit
 
 struct ListTaskView: View {
     @Environment(\.dismiss) var dismiss
@@ -21,6 +22,13 @@ struct ListTaskView: View {
                 if tasks.isEmpty{
                     AnimationView(name: "empty", loopMode: .loop, animationSpeed: 0.5)
                         .scaleEffect(0.9)
+                }else{
+                    ScrollView{
+                        ForEach(tasks, id: \.self){ task in
+                            TaskView(icon: task.icon, url: task.audio, durationHour: task.durationHour, durationMinute: task.durationMinute, durationSeconds: task.durationSecond)
+                                .padding()
+                        }
+                    }
                 }
             }
         }

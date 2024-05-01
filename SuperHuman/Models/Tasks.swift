@@ -15,16 +15,14 @@ class Tasks{
     var durationHour: Int
     var durationMinute: Int
     var durationSecond: Int
-    var timestamp: Date
     var isCompleted: Bool
     
-    init(icon: String = "", audio: URL = URL(string: "")!, durationHour: Int = 0, durationMinute: Int = 0, durationSecond: Int = 0, timestamp: Date = Date.now, isCompleted: Bool = false) {
+    init(icon: String = "", audio: URL = URL(string: "")!, durationHour: Int = 0, durationMinute: Int = 0, durationSecond: Int = 0, isCompleted: Bool = false) {
         self.icon = icon
         self.audio = audio
         self.durationHour = durationHour
         self.durationMinute = durationMinute
         self.durationSecond = durationSecond
-        self.timestamp = timestamp
         self.isCompleted = isCompleted
     }
 }

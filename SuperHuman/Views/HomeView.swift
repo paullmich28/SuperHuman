@@ -8,20 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var navPath = NavigationPath()
-    
-    var body: some View {
-        NavigationStack(path: $navPath){
-            DefaultView(navPath: $navPath)
-        }
-    }
-}
-
-struct DefaultView: View {
+    @StateObject var viewModel = ViewModel()
     @AppStorage("productivityScale") var prodScale = 0.0
-    @Binding var navPath: NavigationPath
     
     var body: some View {
+        
         ZStack{
             Color.lightBlue.ignoresSafeArea()
             ProductivityScaleView(streak: prodScale)
@@ -58,15 +49,17 @@ struct DefaultView: View {
             }
             
             ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing){
-                NavigationLink {
-                    NewTaskView(path: $navPath)
-                } label: {
+                
+                NavigationLink(
+                    destination: NewTaskView()
+                ) {
                     Image(systemName: "plus.circle.fill")
                         .bold()
                         .foregroundStyle(.darkBlue)
                 }
             }
         })
+        
     }
 }
 

@@ -12,7 +12,7 @@ struct TimerView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
     
-    @Binding var path: NavigationPath
+    var url: URL
     
     @Query var tasks: [Tasks]
     
@@ -31,22 +31,33 @@ struct TimerView: View {
                 }.frame(width:120, height:75).background(.darkBlue).cornerRadius(10)
                 
                 Spacer()
+                
                 ChooseTime(hour:$hour, minute:$minute, second:$second)
                 
                 Spacer()
                 
-                NavigationLink {
-                    OngoingTimerView(path: $path)
-                } label: {
+                Button(action: {
+                    NavigationUtil.popToRootView(animated: true)
+                    let task = Tasks(
+                        icon: "😳", 
+                        audio: url,
+                        durationHour: hour,
+                        durationMinute: minute,
+                        durationSecond: second,
+                        isCompleted: false
+                    )
+                    
+                    context.insert(task)
+                }, label: {
                     VStack{
                         Image(systemName:"arrowshape.right.fill").foregroundColor(.darkBlue).font(.custom("SF Pro",size:50))
                         
-                    }.frame(width:120, height:75).background(.whiteBlue).cornerRadius(10)
-                }
-
+                    }
+                    .frame(width:120, height:75).background(.whiteBlue).cornerRadius(10)
+                })
                 Spacer()
             }
-
+            
         }
         .navigationBarBackButtonHidden(true)
         .toolbar(content: {
@@ -190,9 +201,9 @@ struct DecreaseButton : View{
         }
     }
 }
-//
+
 //#Preview {
 //    NavigationStack{
-//        TimerView(emoji:"😊")
+//        TimerView(emoji:"😊", url)
 //    }
 //}

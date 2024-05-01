@@ -12,9 +12,7 @@ struct NewTaskView: View {
     @Environment(\.dismiss) var dismiss
     @State var taskIndex: Int = 0
     
-    @Binding var path: NavigationPath
-    
-    @Query(sort: \Tasks.timestamp) var tasks: [Tasks]
+    @Query var tasks: [Tasks]
     
     var body: some View {
         ZStack{
@@ -31,17 +29,18 @@ struct NewTaskView: View {
                                 .foregroundStyle(.white)
                                 .opacity(0.6)
                             
-                            Image(systemName: "plus")
+                            Image("😳")
                                 .foregroundStyle(.black.opacity(0.5))
                                 .font(.largeTitle)
                         }
                         .padding([.vertical], 20)
                     }
+                    .isDetailLink(false)
                 }
                 
                 if(tasks.count < 3){
                     NavigationLink {
-                        AudioRecordingView(path: $path)
+                        AudioRecordingView()
                     } label: {
                         ZStack{
                             RoundedRectangle(cornerSize: CGSize(width: 20, height: 20))
@@ -55,37 +54,28 @@ struct NewTaskView: View {
                         }
                         .padding([.vertical], 20)
                     }
-                }
-                
-                if tasks.count == 3{
-                    NavigationLink{
-                        TimerView(path: $path)
-                    } label: {
-                        RoundedRectangle(cornerSize: CGSize(width: 20, height: 20))
-                            .frame(width: 192, height: 75)
-                    }
+                    .isDetailLink(false)
                 }
             }
+            .navigationBarBackButtonHidden(true)
+            .toolbar(content: {
+                ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
+                    Button(action: {
+                        dismiss()
+                    }, label: {
+                        HStack{
+                            Image(systemName: "chevron.left")
+                                .imageScale(.large)
+                                .bold()
+                        }
+                    })
+                    .foregroundStyle(.darkBlue)
+                }
+            })
         }
-        .navigationBarBackButtonHidden(true)
-        .toolbar(content: {
-            ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
-                Button(action: {
-                    dismiss()
-                }, label: {
-                    HStack{
-                        Image(systemName: "chevron.left")
-                            .imageScale(.large)
-                            .bold()
-                    }
-                })
-                .foregroundStyle(.darkBlue)
-            }
-        })
     }
 }
-//
-//#Preview {
-//    NewTaskView()
-//    
-//}
+
+#Preview {
+    NewTaskView()
+}

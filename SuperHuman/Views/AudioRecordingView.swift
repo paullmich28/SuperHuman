@@ -11,11 +11,10 @@ import AVKit
 
 struct AudioRecordingView: View {
     @Environment(\.dismiss) var dismiss
+    
     @State var session: AVAudioSession!
     @State var recorder: AVAudioRecorder!
     @State var audioPlayer : AVAudioPlayer!
-    
-    @Binding var path: NavigationPath
     
     @State var alert = false
     
@@ -26,7 +25,7 @@ struct AudioRecordingView: View {
     @State var offsetRecord = 0.0
     @State var circleSize: CGFloat = 0.0
     @State var isRecorded = false
-    @State var audio = ""
+    @State var audio: URL? = nil
     @State var icon = ""
     
     @State var audios: [URL] = []
@@ -38,18 +37,18 @@ struct AudioRecordingView: View {
             Color.lightBlue.ignoresSafeArea()
             
             VStack{
-//                ZStack{
-//                    TextFieldWrapperView(text: $icon)
-//                        .background(Color.white.opacity(0.5))
-//                        .cornerRadius(20.0)
-//                        .offset(y: 100)
-//                        .frame(width: 192, height: 120)
-//                    
-//                    Image(systemName: "plus")
-//                        .foregroundStyle(.black.opacity(0.5))
-//                        .font(.largeTitle)
-//                        .offset(y: 100)
-//                }
+                //                ZStack{
+                //                    TextFieldWrapperView(text: $icon)
+                //                        .background(Color.white.opacity(0.5))
+                //                        .cornerRadius(20.0)
+                //                        .offset(y: 100)
+                //                        .frame(width: 192, height: 120)
+                //
+                //                    Image(systemName: "plus")
+                //                        .foregroundStyle(.black.opacity(0.5))
+                //                        .font(.largeTitle)
+                //                        .offset(y: 100)
+                //                }
                 
                 Spacer()
                 
@@ -70,8 +69,10 @@ struct AudioRecordingView: View {
                                 .font(.system(size: 24))
                         }
                         .offset(y: -90)
+                        .shadow(color: .black.opacity(0.25), radius: 5, x: 4, y: 4)
                         .onTapGesture {
-                            startPlaying(url: audios[0])
+                            startPlaying(url: audios.reversed()[tasks.count])
+                            print(audios.reversed()[tasks.count])
                         }
                     }else{
                         ZStack{
@@ -89,27 +90,11 @@ struct AudioRecordingView: View {
                                 .font(.system(size: 24))
                         }
                         .offset(y: -90)
+                        .shadow(color: .black.opacity(0.25), radius: 5, x: 4, y: 4)
                         .onTapGesture {
                             onIncreaseCircle()
                             
-                            do{
-                                let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                                
-                                let fileName = url.appendingPathComponent("myRcd\(tasks.count + 1).m4a")
-                                
-                                let settings = [
-                                    AVFormatIDKey : Int(kAudioFormatMPEG4AAC),
-                                    AVSampleRateKey : 12000,
-                                    AVNumberOfChannelsKey : 1,
-                                    AVEncoderAudioQualityKey : AVAudioQuality.high.rawValue
-                                ]
-                                
-                                self.recorder = try AVAudioRecorder(url: fileName, settings: settings)
-                                self.recorder.record()
-                                self.record = true
-                            }catch{
-                                print(error.localizedDescription)
-                            }
+                            writeData()
                         }
                     }
                     
@@ -129,27 +114,11 @@ struct AudioRecordingView: View {
                                 .font(.system(size: 24))
                         }
                         .offset(y: -90)
+                        .shadow(color: .black.opacity(0.25), radius: 5, x: 4, y: 4)
                         .onTapGesture {
                             onIncreaseCircle()
                             
-                            do{
-                                let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                                
-                                let fileName = url.appendingPathComponent("myRcd\(tasks.count + 1).m4a")
-                                
-                                let settings = [
-                                    AVFormatIDKey : Int(kAudioFormatMPEG4AAC),
-                                    AVSampleRateKey : 12000,
-                                    AVNumberOfChannelsKey : 1,
-                                    AVEncoderAudioQualityKey : AVAudioQuality.high.rawValue
-                                ]
-                                
-                                self.recorder = try AVAudioRecorder(url: fileName, settings: settings)
-                                self.recorder.record()
-                                self.record = true
-                            }catch{
-                                print(error.localizedDescription)
-                            }
+                            writeData()
                         }
                     }
                 }
@@ -157,14 +126,18 @@ struct AudioRecordingView: View {
                 
                 if isRecorded{
                     NavigationLink {
-                        TimerView(path: $path)
+                        TimerView(url: audios.reversed()[tasks.count])
                     } label: {
                         VStack{
                             Image(systemName:"arrowshape.right.fill").foregroundColor(.darkBlue).font(.custom("SF Pro",size:50))
                             
-                        }.frame(width:120, height:75).background(.whiteBlue).cornerRadius(10)
+                        }
+                        .frame(width:120, height:75)
+                        .background(.whiteBlue)
+                        .cornerRadius(10)
                     }
                     .offset(y: -80)
+                    
                 }
             }
             .frame(height: UIScreen.main.bounds.height)
@@ -294,6 +267,32 @@ struct AudioRecordingView: View {
         }
     }
     
+    func writeData(){
+        do{
+            let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            
+            let fileName = url.appendingPathComponent("myRcd\(tasks.count + 1).m4a")
+            
+            
+            if FileManager.default.fileExists(atPath: fileName.path) {
+                // Remove the existing file
+                try FileManager.default.removeItem(at: fileName)
+            }
+            
+            let settings = [
+                AVFormatIDKey : Int(kAudioFormatMPEG4AAC),
+                AVSampleRateKey : 12000,
+                AVNumberOfChannelsKey : 1,
+                AVEncoderAudioQualityKey : AVAudioQuality.high.rawValue
+            ]
+            
+            self.recorder = try AVAudioRecorder(url: fileName, settings: settings)
+            self.recorder.record()
+            self.record = true
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
     
     func startPlaying(url : URL) {
         
@@ -324,7 +323,7 @@ struct AudioRecordingView: View {
         audioPlayer.stop()
     }
 }
-//
-//#Preview {
-//    AudioRecordingView()
-//}
+
+#Preview {
+    AudioRecordingView()
+}

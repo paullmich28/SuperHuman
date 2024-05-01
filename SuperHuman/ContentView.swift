@@ -9,14 +9,25 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    @Environment(\.modelContext) var context
+    @Query var tasks: [Tasks]
+    
     var body: some View {
-        HomeView()
-            .onAppear{
-                if check(){
-                    UserDefaults.standard.set(0.0, forKey: "productivityScale")
-                    UserDefaults.standard.set(0, forKey: "duration")
+        NavigationStack {
+            HomeView()
+                .onAppear{
+                    if check(){
+                        do{
+                            try context.delete(model: Tasks.self)
+                        }catch{
+                            print("Failed to delete tasks")
+                        }
+                        
+                        UserDefaults.standard.set(0.0, forKey: "productivityScale")
+                        UserDefaults.standard.set(0, forKey: "duration")
+                    }
                 }
-            }
+        }
     }
     
     func check() -> Bool {
